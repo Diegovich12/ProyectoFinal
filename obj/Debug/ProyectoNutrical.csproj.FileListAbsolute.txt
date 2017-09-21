@@ -1,0 +1,232 @@
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+c:\users\diego maciel acevedo\documents\visual studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\Diego Maciel Acevedo\Documents\Visual Studio 2015\Projects\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Trabajadores.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.CuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Grasas.resources
+C:\Users\Diego Maciel Acevedo\Dropbox\nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.CuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Grasas.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.LogIn.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Trabajadores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\MySql.Data.dll
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.CuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Grasas.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.LogIn.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Trabajadores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\bin\Debug\MySql.Data.dll
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\MySql.Data.xml
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.ClasesBDD.Rancho.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.CuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Grasas.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.LogIn.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.MilkoScan.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProyectoNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.AltaProveedores.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.CuartoHumedo.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Evaporador.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Grasas.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.LogIn.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Form1.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.MilkoScan.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Pagos.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Proveedores.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Ranchos.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Recepcion.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorHorizontal.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.SecadorVertical.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.Trabajadores.resources
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Source\Repos\ProjectNutrical2\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\bin\Debug\MySql.Data.dll
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\bin\Debug\MySql.Data.xml
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\ProjectNutrical-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\bin\Debug\MySql.Data.dll
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\bin\Debug\MySql.Data.xml
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Documents\Visual Studio 2017\Projects\Project12\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.ResolveComReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1-master\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.ResolveComReference.cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Desktop\Nutrical\Project1\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Documents\GitHub\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.ResolveComReference.cache
+C:\Users\Diego Maciel Acevedo\Documents\GitHub\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Documents\GitHub\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.ResolveComReference.cache
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\DevBee\Desktop\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.ResolveComReference.cache
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\bin\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.exe
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.pdb
+C:\Users\Diego Maciel Acevedo\Documents\ProyectoNutrical\ProyectoNutrical\ProyectoNutrical\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
