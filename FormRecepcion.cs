@@ -10,37 +10,39 @@ namespace ProyectoNutrical
         {
             InitializeComponent();
             LlenarCombopuestos();
-           // LlenarGridView();
+            LlenarGridView();
         }
        
         private void LlenarGridView()
-        {
+        {         
             foreach (var item in ModelRecepcion.LlenarGridView())
             {
                 var row = (DataGridViewRow)dtgRecepcion.Rows[0].Clone();
                 row.Cells[0].Value = item.IdLinea;
                 row.Cells[1].Value = item.Circuito;
-                row.Cells[2].Value = item.MInicial;
-                row.Cells[3].Value = item.MFinal;
-                row.Cells[4].Value = item.MEnjuague;
-                row.Cells[5].Value = item.TAInicial;
-                row.Cells[6].Value = item.TAFinal;
-                row.Cells[7].Value = item.TAEnjuague;
-                row.Cells[8].Value = item.TTA;
-                row.Cells[9].Value = item.TipoLavado;
-                row.Cells[10].Value = item.TLInicial;
-                row.Cells[11].Value = item.TLFinal;
-                row.Cells[12].Value = item.TLEnjuague;
-                row.Cells[13].Value = item.TTLavado;
-                row.Cells[14].Value = item.Color1;
-                row.Cells[15].Value = item.Color2;
-                row.Cells[16].Value = item.Titulacion;
-                row.Cells[17].Value = item.RT1;
-                row.Cells[18].Value = item.RT2;
-                row.Cells[19].Value = item.Operador;
-                row.Cells[20].Value = item.Analista;
+                row.Cells[2].Value = item.Fecha;
+                row.Cells[3].Value = item.MInicial;
+                row.Cells[4].Value = item.MFinal;
+                row.Cells[5].Value = item.MEnjuague;
+                row.Cells[6].Value = item.TAInicial;
+                row.Cells[7].Value = item.TAFinal;
+                row.Cells[8].Value = item.TAEnjuague;
+                row.Cells[9].Value = item.TTA;
+                row.Cells[10].Value = item.TipoLavado;
+                row.Cells[11].Value = item.TLInicial;
+                row.Cells[12].Value = item.TLFinal;
+                row.Cells[13].Value = item.TLEnjuague;
+                row.Cells[14].Value = item.TTLavado;
+                row.Cells[15].Value = item.Color1;
+                row.Cells[16].Value = item.Color2;
+                row.Cells[17].Value = item.Titulacion;
+                row.Cells[18].Value = item.RT1;
+                row.Cells[19].Value = item.RT2;
+                //row.Cells[20].Value = item.Operador;
+                //row.Cells[21].Value = item.Analista;
                 dtgRecepcion.Rows.Add(row);
             }
+            
         }
 
         private void LlenarCombopuestos()

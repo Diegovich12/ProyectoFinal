@@ -68,7 +68,7 @@ namespace ProyectoNutrical.Models
         ///</summary>
         
 
-       /* public static List<ModelRecepcion> LlenarGridView()
+        public static List<ModelRecepcion> LlenarGridView()
         {
             var lista = new List<ModelRecepcion>();
             var connec = ConexionMySql.ObtenerConexion();
@@ -104,7 +104,7 @@ namespace ProyectoNutrical.Models
                 lista.Add(pModelRecepcion);
             }
             return lista;
-        }*/ 
+        }
 
         /// <summary>
         ///     metodo para agregar funciona
