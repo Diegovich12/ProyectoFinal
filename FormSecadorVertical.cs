@@ -19,45 +19,35 @@ namespace ProyectoNutrical
                 var row = (DataGridViewRow)dtgVertical.Rows[0].Clone();
                 row.Cells[0].Value = item.IdLinea;
                 row.Cells[1].Value = item.Circuito;
-                row.Cells[2].Value = item.MInicial;
-                row.Cells[3].Value = item.MFinal;
-                row.Cells[4].Value = item.MEnjuague;
-                row.Cells[5].Value = item.TAInicial;
-                row.Cells[6].Value = item.TAFinal;
-                row.Cells[7].Value = item.TAEnjuague;
-                row.Cells[8].Value = item.TTA;
-                row.Cells[9].Value = item.TipoLavado;
-                row.Cells[10].Value = item.TLInicial;
-                row.Cells[11].Value = item.TLFinal;
-                row.Cells[12].Value = item.TLEnjuague;
-                row.Cells[13].Value = item.TTLavado;
-                row.Cells[14].Value = item.Color1;
-                row.Cells[15].Value = item.Color2;
-                row.Cells[16].Value = item.Titulacion;
-                row.Cells[17].Value = item.RT1;
-                row.Cells[18].Value = item.RT2;
-                row.Cells[19].Value = item.Operador;
-                row.Cells[20].Value = item.Analista;
+                row.Cells[2].Value = item.Fecha;
+                row.Cells[3].Value = item.MInicial;
+                row.Cells[4].Value = item.MFinal;
+                row.Cells[5].Value = item.MEnjuague;
+                row.Cells[6].Value = item.TAInicial;
+                row.Cells[7].Value = item.TAFinal;
+                row.Cells[8].Value = item.TAEnjuague;
+                row.Cells[9].Value = item.TTA;
+                row.Cells[10].Value = item.TipoLavado;
+                row.Cells[11].Value = item.TLInicial;
+                row.Cells[12].Value = item.TLFinal;
+                row.Cells[13].Value = item.TLEnjuague;
+                row.Cells[14].Value = item.TTLavado;
+                row.Cells[15].Value = item.Color1;
+                row.Cells[16].Value = item.Color2;
+                row.Cells[17].Value = item.Titulacion;
+                row.Cells[18].Value = item.RT1;
+                row.Cells[19].Value = item.RT2;
+                row.Cells[20].Value = item.Operador;
+                row.Cells[21].Value = item.Analista;
                 dtgVertical.Rows.Add(row);
             }
         }
         private void LlenarCombopuestos()
-        {/*
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbCircuito.Items.Add(item.Circuito);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbLavado.Items.Add(item.TipoLavado);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbSolucion.Items.Add(item.Color1);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbSolucion2.Items.Add(item.Color2);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbTitulacion.Items.Add(item.Titulacion);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbOperador.Items.Add(item.Operador);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbAnalista.Items.Add(item.Analista);
-                */
+        {
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1))
+                cmbOperador.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2))
+                cmbAnalista.Items.Add(item.Nombre);
         }
         private void toolStripBtnGuardar_Click(object sender, EventArgs e)
         {
@@ -135,8 +125,7 @@ namespace ProyectoNutrical
         {
             if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Registro", @"Estas Seguro??",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            if (ModelSecadorVertical.Eliminar(ModelSecadorVertical.SVerticalSelect.IdLinea,
-                    ModelSecadorVertical.SVerticalSelect.IdLinea) > 0)
+            if (ModelSecadorVertical.Eliminar(ModelSecadorVertical.SVerticalSelect.IdLinea) > 0)
             {
                 MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -152,16 +141,7 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgVertical.DataSource = ModelSecadorVertical.Buscar(dtpSecadorVertical.Text, cmbLavado.Text, cmbTitulacion.Text);
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            ModelSecadorVertical.DisplayInExcel();
-            {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
-            }
+            dtgVertical.DataSource = ModelSecadorVertical.Buscar(dtpSecadorVertical.Value.Year + "-" + dtpSecadorVertical.Value.Month + "-" + dtpSecadorVertical.Value.Day);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -184,6 +164,70 @@ namespace ProyectoNutrical
             txtRT2.Clear();
             cmbOperador.Items.Clear();
             cmbAnalista.Items.Clear();
+        }
+
+        private void exportacionTotalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelSecadorVertical.DisplayInExcel();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void exportacionFechaYMuestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelSecadorVertical.DisplayInExcelMuestras();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void exportacionFechaYTitulacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelSecadorVertical.DisplayInExcelTitulaciones();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void dtgVertical_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtgVertical.SelectedRows.Count == 1)
+            {
+                if (dtgVertical.CurrentRow != null)
+                {
+                    var idLinea = Convert.ToInt32(dtgVertical.CurrentRow.Cells[0].Value);
+                    ModelSecadorVertical.ObtenerSV(idLinea);
+                }
+                cmbCircuito.SelectedItem = ModelSecadorVertical.SVerticalSelect.Circuito;
+                dtpSecadorVertical.Text = ModelSecadorVertical.SVerticalSelect.Fecha;
+                txtMInicial.Text = ModelSecadorVertical.SVerticalSelect.MEnjuague;
+                txtMFinal.Text = ModelSecadorVertical.SVerticalSelect.MFinal;
+                txtMEnjuague.Text = ModelSecadorVertical.SVerticalSelect.MEnjuague;
+                txtTAInicial.Text = ModelSecadorVertical.SVerticalSelect.TAInicial;
+                txtTAFinal.Text = ModelSecadorVertical.SVerticalSelect.TAFinal;
+                txtTAEnjuague.Text = ModelSecadorVertical.SVerticalSelect.TAEnjuague;
+                lblTTA.Text = ModelSecadorVertical.SVerticalSelect.TTA;
+                cmbLavado.SelectedItem = ModelSecadorVertical.SVerticalSelect.TipoLavado;
+                txtTLInicial.Text = ModelSecadorVertical.SVerticalSelect.TLInicial;
+                txtTLFinal.Text = ModelSecadorVertical.SVerticalSelect.TLFinal;
+                txtTLEnjuague.Text = ModelSecadorVertical.SVerticalSelect.TLEnjuague;
+                lblTTL.Text = ModelSecadorVertical.SVerticalSelect.TTLavado;
+                cmbSolucion.SelectedItem = ModelSecadorVertical.SVerticalSelect.Color1;
+                cmbSolucion2.SelectedItem = ModelSecadorVertical.SVerticalSelect.Color2;
+                cmbTitulacion.SelectedItem = ModelSecadorVertical.SVerticalSelect.Titulacion;
+                txtRT1.Text = ModelSecadorVertical.SVerticalSelect.RT1;
+                txtRT2.Text = ModelSecadorVertical.SVerticalSelect.RT2;
+                cmbOperador.SelectedItem = ModelSecadorVertical.SVerticalSelect.Operador;
+                cmbAnalista.SelectedItem = ModelSecadorVertical.SVerticalSelect.Analista;
+            }
+            else
+            {
+                MessageBox.Show(@"debe de seleccionar una fila");
+            }
         }
     }
 }

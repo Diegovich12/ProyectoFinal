@@ -160,7 +160,7 @@ namespace ProyectoNutrical.Models
             var conexion = ConexionMySql.ObtenerConexion();
             var comando =
                 new MySqlCommand(
-                    $"UPDATE altaproveedores SET Nombre='{pModelProveedores.Nombre}', Proveedor='{pModelProveedores.Proveedor}', Matricula='{pModelProveedores.Matricula}', NoPipa='{pModelProveedores.NoPipa}', Rancho='{pModelProveedores.Rancho}' WHERE idproveedor='{pModelProveedores.IdProveedor}'",
+                    $"UPDATE proveedores SET Nombre='{pModelProveedores.Nombre}', Proveedor='{pModelProveedores.Proveedor}', Matricula='{pModelProveedores.Matricula}', NoPipa='{pModelProveedores.NoPipa}', Rancho='{pModelProveedores.Rancho}' WHERE idproveedor='{pModelProveedores.IdProveedor}'",
                     conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();

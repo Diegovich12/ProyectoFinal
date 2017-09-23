@@ -30,18 +30,42 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCuartoHumedo));
             this.dtgCuartoHumedo = new System.Windows.Forms.DataGridView();
+            this.IdLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Circuito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Operador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Analista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnActualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.exportacionTotalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportacionFechaYMuestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportacionFechaYTitulacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtpCuartoHumedo = new System.Windows.Forms.DateTimePicker();
             this.cmbCircuito = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbMuestra = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMEnjuague = new System.Windows.Forms.TextBox();
@@ -93,10 +117,144 @@
             // dtgCuartoHumedo
             // 
             this.dtgCuartoHumedo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCuartoHumedo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdLinea,
+            this.Circuito,
+            this.Fecha,
+            this.MInicial,
+            this.MFinal,
+            this.MEnjuague,
+            this.TAInicial,
+            this.TAFinal,
+            this.TAEnjuague,
+            this.TTA,
+            this.TipoLavado,
+            this.TLInicial,
+            this.TLFinal,
+            this.TLEnjuague,
+            this.TTLavado,
+            this.Color1,
+            this.Color2,
+            this.Titulacion,
+            this.RT1,
+            this.RT2,
+            this.Operador,
+            this.Analista});
             this.dtgCuartoHumedo.Location = new System.Drawing.Point(12, 457);
             this.dtgCuartoHumedo.Name = "dtgCuartoHumedo";
-            this.dtgCuartoHumedo.Size = new System.Drawing.Size(1010, 192);
+            this.dtgCuartoHumedo.Size = new System.Drawing.Size(1165, 192);
             this.dtgCuartoHumedo.TabIndex = 0;
+            this.dtgCuartoHumedo.DoubleClick += new System.EventHandler(this.dtgCuartoHumedo_DoubleClick);
+            // 
+            // IdLinea
+            // 
+            this.IdLinea.HeaderText = "IdLinea";
+            this.IdLinea.Name = "IdLinea";
+            // 
+            // Circuito
+            // 
+            this.Circuito.HeaderText = "Circuito";
+            this.Circuito.Name = "Circuito";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // MInicial
+            // 
+            this.MInicial.HeaderText = "MInicial";
+            this.MInicial.Name = "MInicial";
+            // 
+            // MFinal
+            // 
+            this.MFinal.HeaderText = "MFinal";
+            this.MFinal.Name = "MFinal";
+            // 
+            // MEnjuague
+            // 
+            this.MEnjuague.HeaderText = "MEnjuague";
+            this.MEnjuague.Name = "MEnjuague";
+            // 
+            // TAInicial
+            // 
+            this.TAInicial.HeaderText = "TAInicial";
+            this.TAInicial.Name = "TAInicial";
+            // 
+            // TAFinal
+            // 
+            this.TAFinal.HeaderText = "TAFinal";
+            this.TAFinal.Name = "TAFinal";
+            // 
+            // TAEnjuague
+            // 
+            this.TAEnjuague.HeaderText = "TAEnjuague";
+            this.TAEnjuague.Name = "TAEnjuague";
+            // 
+            // TTA
+            // 
+            this.TTA.HeaderText = "TTAnalisis";
+            this.TTA.Name = "TTA";
+            // 
+            // TipoLavado
+            // 
+            this.TipoLavado.HeaderText = "TipoLavado";
+            this.TipoLavado.Name = "TipoLavado";
+            // 
+            // TLInicial
+            // 
+            this.TLInicial.HeaderText = "TLInicial";
+            this.TLInicial.Name = "TLInicial";
+            // 
+            // TLFinal
+            // 
+            this.TLFinal.HeaderText = "TLFinal";
+            this.TLFinal.Name = "TLFinal";
+            // 
+            // TLEnjuague
+            // 
+            this.TLEnjuague.HeaderText = "TLEnjuague";
+            this.TLEnjuague.Name = "TLEnjuague";
+            // 
+            // TTLavado
+            // 
+            this.TTLavado.HeaderText = "TTLavado";
+            this.TTLavado.Name = "TTLavado";
+            // 
+            // Color1
+            // 
+            this.Color1.HeaderText = "Color1";
+            this.Color1.Name = "Color1";
+            // 
+            // Color2
+            // 
+            this.Color2.HeaderText = "Color2";
+            this.Color2.Name = "Color2";
+            // 
+            // Titulacion
+            // 
+            this.Titulacion.HeaderText = "Titulacion";
+            this.Titulacion.Name = "Titulacion";
+            // 
+            // RT1
+            // 
+            this.RT1.HeaderText = "RT1";
+            this.RT1.Name = "RT1";
+            // 
+            // RT2
+            // 
+            this.RT2.HeaderText = "RT2";
+            this.RT2.Name = "RT2";
+            // 
+            // Operador
+            // 
+            this.Operador.HeaderText = "Operador";
+            this.Operador.Name = "Operador";
+            // 
+            // Analista
+            // 
+            this.Analista.HeaderText = "Analista";
+            this.Analista.Name = "Analista";
             // 
             // toolStrip1
             // 
@@ -108,7 +266,7 @@
             this.toolStripBtnEliminar,
             this.toolStripBtnBuscar,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(970, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(1180, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(64, 661);
             this.toolStrip1.TabIndex = 28;
@@ -172,6 +330,10 @@
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportacionTotalToolStripMenuItem,
+            this.exportacionFechaYMuestrasToolStripMenuItem,
+            this.exportacionFechaYTitulacionesToolStripMenuItem});
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -179,7 +341,27 @@
             this.toolStripButton1.Size = new System.Drawing.Size(61, 67);
             this.toolStripButton1.Text = "Exportar";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // exportacionTotalToolStripMenuItem
+            // 
+            this.exportacionTotalToolStripMenuItem.Name = "exportacionTotalToolStripMenuItem";
+            this.exportacionTotalToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionTotalToolStripMenuItem.Text = "Exportacion Total";
+            this.exportacionTotalToolStripMenuItem.Click += new System.EventHandler(this.exportacionTotalToolStripMenuItem_Click);
+            // 
+            // exportacionFechaYMuestrasToolStripMenuItem
+            // 
+            this.exportacionFechaYMuestrasToolStripMenuItem.Name = "exportacionFechaYMuestrasToolStripMenuItem";
+            this.exportacionFechaYMuestrasToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionFechaYMuestrasToolStripMenuItem.Text = "Exportacion Fecha y Muestras";
+            this.exportacionFechaYMuestrasToolStripMenuItem.Click += new System.EventHandler(this.exportacionFechaYMuestrasToolStripMenuItem_Click);
+            // 
+            // exportacionFechaYTitulacionesToolStripMenuItem
+            // 
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Name = "exportacionFechaYTitulacionesToolStripMenuItem";
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Text = "Exportacion Fecha y Titulaciones";
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Click += new System.EventHandler(this.exportacionFechaYTitulacionesToolStripMenuItem_Click);
             // 
             // dtpCuartoHumedo
             // 
@@ -192,11 +374,15 @@
             // 
             this.cmbCircuito.FormattingEnabled = true;
             this.cmbCircuito.Items.AddRange(new object[] {
-            "Silo 1",
-            "Silo 2",
-            "Silo 3",
-            "Linea de Recibo ",
-            "RT- 2"});
+            "P1, P2 Y P3",
+            "P1, P2 Y P3 CON LINEA A EVA.",
+            "P1, P2 Y P2 CON LINEA A S.V.",
+            "P1, P2 Y P3 CON LINEA A S.H.",
+            "P1 Y P2",
+            "P3",
+            "TQ P4 Y P5 CON EQUIPO LCA",
+            "TQ P4 Y P5 PRECALENTADO",
+            "LINEA DE C.H. A S.H."});
             this.cmbCircuito.Location = new System.Drawing.Point(129, 32);
             this.cmbCircuito.Name = "cmbCircuito";
             this.cmbCircuito.Size = new System.Drawing.Size(121, 21);
@@ -219,18 +405,6 @@
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 29;
             this.label1.Text = "Circuito o Linea ";
-            // 
-            // cmbMuestra
-            // 
-            this.cmbMuestra.FormattingEnabled = true;
-            this.cmbMuestra.Items.AddRange(new object[] {
-            "Inicial",
-            "Final",
-            "Enjuague"});
-            this.cmbMuestra.Location = new System.Drawing.Point(129, 125);
-            this.cmbMuestra.Name = "cmbMuestra";
-            this.cmbMuestra.Size = new System.Drawing.Size(121, 21);
-            this.cmbMuestra.TabIndex = 81;
             // 
             // label4
             // 
@@ -533,7 +707,7 @@
             this.cmbTitulacion.Items.AddRange(new object[] {
             "Acido ",
             "Alcalino"});
-            this.cmbTitulacion.Location = new System.Drawing.Point(834, 32);
+            this.cmbTitulacion.Location = new System.Drawing.Point(957, 38);
             this.cmbTitulacion.Name = "cmbTitulacion";
             this.cmbTitulacion.Size = new System.Drawing.Size(121, 21);
             this.cmbTitulacion.TabIndex = 91;
@@ -541,7 +715,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(759, 35);
+            this.label9.Location = new System.Drawing.Point(882, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 90;
@@ -551,7 +725,7 @@
             // 
             this.groupBox2.Controls.Add(this.txtRT2);
             this.groupBox2.Controls.Add(this.txtRT1);
-            this.groupBox2.Location = new System.Drawing.Point(755, 73);
+            this.groupBox2.Location = new System.Drawing.Point(878, 79);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 92;
@@ -575,17 +749,15 @@
             // cmbOperador
             // 
             this.cmbOperador.FormattingEnabled = true;
-            this.cmbOperador.Items.AddRange(new object[] {
-            "Eloy"});
-            this.cmbOperador.Location = new System.Drawing.Point(832, 199);
+            this.cmbOperador.Location = new System.Drawing.Point(863, 197);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(121, 21);
+            this.cmbOperador.Size = new System.Drawing.Size(215, 21);
             this.cmbOperador.TabIndex = 96;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(752, 202);
+            this.label20.Location = new System.Drawing.Point(783, 200);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(51, 13);
             this.label20.TabIndex = 95;
@@ -594,24 +766,15 @@
             // cmbAnalista
             // 
             this.cmbAnalista.FormattingEnabled = true;
-            this.cmbAnalista.Items.AddRange(new object[] {
-            "Alejandro Villalobos",
-            "Alejandro Reyes",
-            "Benjamin Flores",
-            "Cristhian Perez",
-            "Cristhian Villalobos",
-            "Diego Fabian Godinez",
-            "Juan Delgado",
-            "Julio Cesar Chavez"});
-            this.cmbAnalista.Location = new System.Drawing.Point(832, 236);
+            this.cmbAnalista.Location = new System.Drawing.Point(863, 234);
             this.cmbAnalista.Name = "cmbAnalista";
-            this.cmbAnalista.Size = new System.Drawing.Size(121, 21);
+            this.cmbAnalista.Size = new System.Drawing.Size(215, 21);
             this.cmbAnalista.TabIndex = 94;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(757, 239);
+            this.label10.Location = new System.Drawing.Point(788, 237);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 93;
@@ -622,7 +785,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoNutrical.Properties.Resources.nutrical2;
-            this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.ClientSize = new System.Drawing.Size(1244, 661);
             this.Controls.Add(this.cmbOperador);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.cmbAnalista);
@@ -638,7 +801,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cmbMuestra);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpCuartoHumedo);
             this.Controls.Add(this.cmbCircuito);
@@ -677,12 +839,10 @@
         private System.Windows.Forms.ToolStripButton toolStripBtnActualizar;
         private System.Windows.Forms.ToolStripButton toolStripBtnEliminar;
         private System.Windows.Forms.ToolStripButton toolStripBtnBuscar;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.DateTimePicker dtpCuartoHumedo;
         private System.Windows.Forms.ComboBox cmbCircuito;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbMuestra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMEnjuague;
@@ -723,5 +883,31 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cmbAnalista;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdLinea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Circuito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoLavado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TTLavado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Operador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Analista;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem exportacionTotalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportacionFechaYMuestrasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportacionFechaYTitulacionesToolStripMenuItem;
     }
 }

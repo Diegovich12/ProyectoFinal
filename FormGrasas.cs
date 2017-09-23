@@ -19,46 +19,35 @@ namespace ProyectoNutrical
                 var row = (DataGridViewRow)dtgGrasas.Rows[0].Clone();
                 row.Cells[0].Value = item.IdLinea;
                 row.Cells[1].Value = item.Circuito;
-                row.Cells[2].Value = item.MInicial;
-                row.Cells[3].Value = item.MFinal;
-                row.Cells[4].Value = item.MEnjuague;
-                row.Cells[5].Value = item.TAInicial;
-                row.Cells[6].Value = item.TAFinal;
-                row.Cells[7].Value = item.TAEnjuague;
-                row.Cells[8].Value = item.TTA;
-                row.Cells[9].Value = item.TipoLavado;
-                row.Cells[10].Value = item.TLInicial;
-                row.Cells[11].Value = item.TLFinal;
-                row.Cells[12].Value = item.TLEnjuague;
-                row.Cells[13].Value = item.TTLavado;
-                row.Cells[14].Value = item.Color1;
-                row.Cells[15].Value = item.Color2;
-                row.Cells[16].Value = item.Titulacion;
-                row.Cells[17].Value = item.RT1;
-                row.Cells[18].Value = item.RT2;
-                row.Cells[19].Value = item.Operador;
-                row.Cells[20].Value = item.Analista;
+                row.Cells[2].Value = item.Fecha;
+                row.Cells[3].Value = item.MInicial;
+                row.Cells[4].Value = item.MFinal;
+                row.Cells[5].Value = item.MEnjuague;
+                row.Cells[6].Value = item.TAInicial;
+                row.Cells[7].Value = item.TAFinal;
+                row.Cells[8].Value = item.TAEnjuague;
+                row.Cells[9].Value = item.TTA;
+                row.Cells[10].Value = item.TipoLavado;
+                row.Cells[11].Value = item.TLInicial;
+                row.Cells[12].Value = item.TLFinal;
+                row.Cells[13].Value = item.TLEnjuague;
+                row.Cells[14].Value = item.TTLavado;
+                row.Cells[15].Value = item.Color1;
+                row.Cells[16].Value = item.Color2;
+                row.Cells[17].Value = item.Titulacion;
+                row.Cells[18].Value = item.RT1;
+                row.Cells[19].Value = item.RT2;
+                row.Cells[20].Value = item.Operador;
+                row.Cells[21].Value = item.Analista;
                 dtgGrasas.Rows.Add(row);
             }
         }
         private void LlenarCombopuestos()
         {
-            /*
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbCircuito.Items.Add(item.Circuito);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbLavado.Items.Add(item.TipoLavado);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbSolucion.Items.Add(item.Color1);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbSolucion2.Items.Add(item.Color2);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbTitulacion.Items.Add(item.Titulacion);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbOperador.Items.Add(item.Operador);
-            foreach (var item in ModelRecepcion.Llenarcombo())
-                cmbAnalista.Items.Add(item.Analista);
-                */
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1))
+                cmbOperador.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2))
+                cmbAnalista.Items.Add(item.Nombre);
         }
         private void toolStripBtnGuardar_Click(object sender, EventArgs e)
         {
@@ -136,8 +125,7 @@ namespace ProyectoNutrical
 
             if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Registro", @"Estas Seguro??",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            if (ModelGrasas.Eliminar(ModelGrasas.GrasasSelect.IdLinea,
-                    ModelGrasas.GrasasSelect.IdLinea) > 0)
+            if (ModelGrasas.Eliminar(ModelGrasas.GrasasSelect.IdLinea) > 0)
             {
                 MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -153,16 +141,7 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgGrasas.DataSource = ModelGrasas.Buscar(dtpGrasas.Text, cmbLavado.Text, cmbTitulacion.Text);
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            ModelGrasas.DisplayInExcel();
-            {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
-            }
+            dtgGrasas.DataSource = ModelGrasas.Buscar(dtpGrasas.Value.Year + "-" + dtpGrasas.Value.Month + "-" + dtpGrasas.Value.Day);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -186,6 +165,70 @@ namespace ProyectoNutrical
             cmbOperador.Items.Clear();
             cmbAnalista.Items.Clear();
 
+        }
+
+        private void exportacionTotalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelGrasas.DisplayInExcel();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void exportacionFechaYMuestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelGrasas.DisplayInExcelMuestras();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void exportacionFechaYTitulacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelGrasas.DisplayInExcelTitulaciones();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
+
+        private void dtgGrasas_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtgGrasas.SelectedRows.Count == 1)
+            {
+                if (dtgGrasas.CurrentRow != null)
+                {
+                    var idLinea = Convert.ToInt32(dtgGrasas.CurrentRow.Cells[0].Value);
+                    ModelGrasas.ObtenerGR(idLinea);
+                }
+                cmbCircuito.SelectedItem = ModelGrasas.GrasasSelect.Circuito;
+                dtpGrasas.Text = ModelGrasas.GrasasSelect.Fecha;
+                txtMInicial.Text = ModelGrasas.GrasasSelect.MEnjuague;
+                txtMFinal.Text = ModelGrasas.GrasasSelect.MFinal;
+                txtMEnjuague.Text = ModelGrasas.GrasasSelect.MEnjuague;
+                txtTAInicial.Text = ModelGrasas.GrasasSelect.TAInicial;
+                txtTAFinal.Text = ModelGrasas.GrasasSelect.TAFinal;
+                txtTAEnjuague.Text = ModelGrasas.GrasasSelect.TAEnjuague;
+                lblTTA.Text = ModelGrasas.GrasasSelect.TTA;
+                cmbLavado.SelectedItem = ModelGrasas.GrasasSelect.TipoLavado;
+                txtTLInicial.Text = ModelGrasas.GrasasSelect.TLInicial;
+                txtTLFinal.Text = ModelGrasas.GrasasSelect.TLFinal;
+                txtTLEnjuague.Text = ModelGrasas.GrasasSelect.TLEnjuague;
+                lblTTL.Text = ModelGrasas.GrasasSelect.TTLavado;
+                cmbSolucion.SelectedItem = ModelGrasas.GrasasSelect.Color1;
+                cmbSolucion2.SelectedItem = ModelGrasas.GrasasSelect.Color2;
+                cmbTitulacion.SelectedItem = ModelGrasas.GrasasSelect.Titulacion;
+                txtRT1.Text = ModelGrasas.GrasasSelect.RT1;
+                txtRT2.Text = ModelGrasas.GrasasSelect.RT2;
+                cmbOperador.SelectedItem = ModelGrasas.GrasasSelect.Operador;
+                cmbAnalista.SelectedItem = ModelGrasas.GrasasSelect.Analista;
+            }
+            else
+            {
+                MessageBox.Show(@"debe de seleccionar una fila");
+            }
         }
     }
 }

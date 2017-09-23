@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEvaporador));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +58,28 @@
             this.dtpEvaporador = new System.Windows.Forms.DateTimePicker();
             this.cmbTitulacion = new System.Windows.Forms.ComboBox();
             this.dtgEvaporador = new System.Windows.Forms.DataGridView();
+            this.IdLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Circuito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Operador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Analista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTTL = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -68,12 +90,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnActualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.exportacionTotalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportacionFechaYMuestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportacionFechaYTitulacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblTTA = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -83,7 +108,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.cmbMuestra = new System.Windows.Forms.ComboBox();
             this.cmbSolucion2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -168,7 +192,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(731, 27);
+            this.label9.Location = new System.Drawing.Point(856, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 8;
@@ -177,7 +201,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(740, 187);
+            this.label10.Location = new System.Drawing.Point(796, 173);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 13);
             this.label10.TabIndex = 9;
@@ -186,7 +210,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(740, 227);
+            this.label11.Location = new System.Drawing.Point(796, 213);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 10;
@@ -232,7 +256,7 @@
             // 
             this.groupBox2.Controls.Add(this.txtRT2);
             this.groupBox2.Controls.Add(this.txtRT1);
-            this.groupBox2.Location = new System.Drawing.Point(767, 51);
+            this.groupBox2.Location = new System.Drawing.Point(892, 51);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 14;
@@ -256,17 +280,17 @@
             // cmbOperador
             // 
             this.cmbOperador.FormattingEnabled = true;
-            this.cmbOperador.Location = new System.Drawing.Point(820, 184);
+            this.cmbOperador.Location = new System.Drawing.Point(876, 170);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(121, 21);
+            this.cmbOperador.Size = new System.Drawing.Size(216, 21);
             this.cmbOperador.TabIndex = 15;
             // 
             // cmbAnalista
             // 
             this.cmbAnalista.FormattingEnabled = true;
-            this.cmbAnalista.Location = new System.Drawing.Point(820, 224);
+            this.cmbAnalista.Location = new System.Drawing.Point(876, 210);
             this.cmbAnalista.Name = "cmbAnalista";
-            this.cmbAnalista.Size = new System.Drawing.Size(121, 21);
+            this.cmbAnalista.Size = new System.Drawing.Size(216, 21);
             this.cmbAnalista.TabIndex = 16;
             // 
             // cmbSolucion
@@ -324,42 +348,176 @@
             this.cmbTitulacion.Items.AddRange(new object[] {
             "Acido ",
             "Alcalino"});
-            this.cmbTitulacion.Location = new System.Drawing.Point(811, 24);
+            this.cmbTitulacion.Location = new System.Drawing.Point(936, 24);
             this.cmbTitulacion.Name = "cmbTitulacion";
             this.cmbTitulacion.Size = new System.Drawing.Size(121, 21);
             this.cmbTitulacion.TabIndex = 22;
             // 
             // dtgEvaporador
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEvaporador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgEvaporador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgEvaporador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgEvaporador.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgEvaporador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdLinea,
+            this.Circuito,
+            this.Fecha,
+            this.MInicial,
+            this.MFinal,
+            this.MEnjuague,
+            this.TAInicial,
+            this.TAFinal,
+            this.TAEnjuague,
+            this.TTA,
+            this.TipoLavado,
+            this.TLInicial,
+            this.TLFinal,
+            this.TLEnjuague,
+            this.TTLavado,
+            this.Color1,
+            this.Color2,
+            this.Titulacion,
+            this.RT1,
+            this.RT2,
+            this.Operador,
+            this.Analista});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgEvaporador.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgEvaporador.Location = new System.Drawing.Point(10, 462);
             this.dtgEvaporador.Name = "dtgEvaporador";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEvaporador.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dtgEvaporador.Size = new System.Drawing.Size(1012, 187);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgEvaporador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgEvaporador.Size = new System.Drawing.Size(1167, 187);
             this.dtgEvaporador.TabIndex = 25;
+            this.dtgEvaporador.DoubleClick += new System.EventHandler(this.dtgEvaporador_DoubleClick);
+            // 
+            // IdLinea
+            // 
+            this.IdLinea.HeaderText = "IdLinea";
+            this.IdLinea.Name = "IdLinea";
+            // 
+            // Circuito
+            // 
+            this.Circuito.HeaderText = "Circuito";
+            this.Circuito.Name = "Circuito";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // MInicial
+            // 
+            this.MInicial.HeaderText = "MInicial";
+            this.MInicial.Name = "MInicial";
+            // 
+            // MFinal
+            // 
+            this.MFinal.HeaderText = "MFinal";
+            this.MFinal.Name = "MFinal";
+            // 
+            // MEnjuague
+            // 
+            this.MEnjuague.HeaderText = "MEnjuague";
+            this.MEnjuague.Name = "MEnjuague";
+            // 
+            // TAInicial
+            // 
+            this.TAInicial.HeaderText = "TAInicial";
+            this.TAInicial.Name = "TAInicial";
+            // 
+            // TAFinal
+            // 
+            this.TAFinal.HeaderText = "TAFinal";
+            this.TAFinal.Name = "TAFinal";
+            // 
+            // TAEnjuague
+            // 
+            this.TAEnjuague.HeaderText = "TAEnjuague";
+            this.TAEnjuague.Name = "TAEnjuague";
+            // 
+            // TTA
+            // 
+            this.TTA.HeaderText = "TTAnalisis";
+            this.TTA.Name = "TTA";
+            // 
+            // TipoLavado
+            // 
+            this.TipoLavado.HeaderText = "TipoLavado";
+            this.TipoLavado.Name = "TipoLavado";
+            // 
+            // TLInicial
+            // 
+            this.TLInicial.HeaderText = "TLInicial";
+            this.TLInicial.Name = "TLInicial";
+            // 
+            // TLFinal
+            // 
+            this.TLFinal.HeaderText = "TLFinal";
+            this.TLFinal.Name = "TLFinal";
+            // 
+            // TLEnjuague
+            // 
+            this.TLEnjuague.HeaderText = "TLEnjuague";
+            this.TLEnjuague.Name = "TLEnjuague";
+            // 
+            // TTLavado
+            // 
+            this.TTLavado.HeaderText = "TTLavado";
+            this.TTLavado.Name = "TTLavado";
+            // 
+            // Color1
+            // 
+            this.Color1.HeaderText = "Color1";
+            this.Color1.Name = "Color1";
+            // 
+            // Color2
+            // 
+            this.Color2.HeaderText = "Color2";
+            this.Color2.Name = "Color2";
+            // 
+            // Titulacion
+            // 
+            this.Titulacion.HeaderText = "Titulacion";
+            this.Titulacion.Name = "Titulacion";
+            // 
+            // RT1
+            // 
+            this.RT1.HeaderText = "RT1";
+            this.RT1.Name = "RT1";
+            // 
+            // RT2
+            // 
+            this.RT2.HeaderText = "RT2";
+            this.RT2.Name = "RT2";
+            // 
+            // Operador
+            // 
+            this.Operador.HeaderText = "Operador";
+            this.Operador.Name = "Operador";
+            // 
+            // Analista
+            // 
+            this.Analista.HeaderText = "Analista";
+            this.Analista.Name = "Analista";
             // 
             // groupBox3
             // 
@@ -454,11 +612,22 @@
             this.toolStripBtnEliminar,
             this.toolStripBtnBuscar,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(970, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(1180, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(64, 661);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::ProyectoNutrical.Properties.Resources._1497916345_icon_105_folder_add;
+            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(61, 67);
+            this.toolStripButton2.Text = "Nuevo";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripBtnGuardar
             // 
@@ -507,6 +676,10 @@
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportacionTotalToolStripMenuItem,
+            this.exportacionFechaYMuestrasToolStripMenuItem,
+            this.exportacionFechaYTitulacionesToolStripMenuItem});
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -514,18 +687,27 @@
             this.toolStripButton1.Size = new System.Drawing.Size(61, 67);
             this.toolStripButton1.Text = "Exportar";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // exportacionTotalToolStripMenuItem
             // 
-            this.toolStripButton2.Image = global::ProyectoNutrical.Properties.Resources._1497916345_icon_105_folder_add;
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(61, 67);
-            this.toolStripButton2.Text = "Nuevo";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.exportacionTotalToolStripMenuItem.Name = "exportacionTotalToolStripMenuItem";
+            this.exportacionTotalToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionTotalToolStripMenuItem.Text = "Exportacion Total";
+            this.exportacionTotalToolStripMenuItem.Click += new System.EventHandler(this.exportacionTotalToolStripMenuItem_Click);
+            // 
+            // exportacionFechaYMuestrasToolStripMenuItem
+            // 
+            this.exportacionFechaYMuestrasToolStripMenuItem.Name = "exportacionFechaYMuestrasToolStripMenuItem";
+            this.exportacionFechaYMuestrasToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionFechaYMuestrasToolStripMenuItem.Text = "Exportacion Fecha y Muestras";
+            this.exportacionFechaYMuestrasToolStripMenuItem.Click += new System.EventHandler(this.exportacionFechaYMuestrasToolStripMenuItem_Click);
+            // 
+            // exportacionFechaYTitulacionesToolStripMenuItem
+            // 
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Name = "exportacionFechaYTitulacionesToolStripMenuItem";
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Text = "Exportacion Fecha y Titulaciones";
+            this.exportacionFechaYTitulacionesToolStripMenuItem.Click += new System.EventHandler(this.exportacionFechaYTitulacionesToolStripMenuItem_Click);
             // 
             // groupBox4
             // 
@@ -610,18 +792,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Inicial";
             // 
-            // cmbMuestra
-            // 
-            this.cmbMuestra.FormattingEnabled = true;
-            this.cmbMuestra.Items.AddRange(new object[] {
-            "Inicial",
-            "Final",
-            "Enjuague"});
-            this.cmbMuestra.Location = new System.Drawing.Point(129, 127);
-            this.cmbMuestra.Name = "cmbMuestra";
-            this.cmbMuestra.Size = new System.Drawing.Size(121, 21);
-            this.cmbMuestra.TabIndex = 79;
-            // 
             // cmbSolucion2
             // 
             this.cmbSolucion2.FormattingEnabled = true;
@@ -641,9 +811,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.ClientSize = new System.Drawing.Size(1244, 661);
             this.Controls.Add(this.cmbSolucion2);
-            this.Controls.Add(this.cmbMuestra);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox3);
@@ -729,7 +898,6 @@
         private System.Windows.Forms.ToolStripButton toolStripBtnActualizar;
         private System.Windows.Forms.ToolStripButton toolStripBtnEliminar;
         private System.Windows.Forms.ToolStripButton toolStripBtnBuscar;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblTTA;
         private System.Windows.Forms.Label label17;
@@ -739,8 +907,33 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cmbMuestra;
         private System.Windows.Forms.ComboBox cmbSolucion2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem exportacionTotalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportacionFechaYMuestrasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportacionFechaYTitulacionesToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdLinea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Circuito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoLavado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLEnjuague;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TTLavado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Operador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Analista;
     }
 }

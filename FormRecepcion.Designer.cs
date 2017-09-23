@@ -51,14 +51,16 @@
             this.Circuito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mfinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Menjuage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TAEnjuage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TLinicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLEnjuague = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttLavado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -178,7 +180,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(766, 22);
+            this.label9.Location = new System.Drawing.Point(838, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 8;
@@ -266,7 +268,7 @@
             this.cmbAnalista.FormattingEnabled = true;
             this.cmbAnalista.Location = new System.Drawing.Point(841, 219);
             this.cmbAnalista.Name = "cmbAnalista";
-            this.cmbAnalista.Size = new System.Drawing.Size(270, 21);
+            this.cmbAnalista.Size = new System.Drawing.Size(233, 21);
             this.cmbAnalista.TabIndex = 16;
             // 
             // dtgRecepcion
@@ -278,14 +280,16 @@
             this.Circuito,
             this.Fecha,
             this.MInicial,
-            this.Mfinal,
-            this.Menjuage,
+            this.MFinal,
+            this.MEnjuague,
             this.TAInicial,
             this.TAFinal,
-            this.TAEnjuage,
+            this.TAEnjuague,
             this.TTA,
             this.TipoLavado,
-            this.TLinicial,
+            this.TLInicial,
+            this.TLFinal,
+            this.TLEnjuague,
             this.ttLavado,
             this.color1,
             this.color2,
@@ -296,7 +300,7 @@
             this.analista});
             this.dtgRecepcion.Location = new System.Drawing.Point(8, 470);
             this.dtgRecepcion.Name = "dtgRecepcion";
-            this.dtgRecepcion.Size = new System.Drawing.Size(1103, 179);
+            this.dtgRecepcion.Size = new System.Drawing.Size(1167, 179);
             this.dtgRecepcion.TabIndex = 22;
             this.dtgRecepcion.DoubleClick += new System.EventHandler(this.dtgRecepcion_DoubleClick);
             // 
@@ -320,15 +324,15 @@
             this.MInicial.HeaderText = "MInicial";
             this.MInicial.Name = "MInicial";
             // 
-            // Mfinal
+            // MFinal
             // 
-            this.Mfinal.HeaderText = "Mfinal";
-            this.Mfinal.Name = "Mfinal";
+            this.MFinal.HeaderText = "MFinal";
+            this.MFinal.Name = "MFinal";
             // 
-            // Menjuage
+            // MEnjuague
             // 
-            this.Menjuage.HeaderText = "Menjuage";
-            this.Menjuage.Name = "Menjuage";
+            this.MEnjuague.HeaderText = "MEnjuague";
+            this.MEnjuague.Name = "MEnjuague";
             // 
             // TAInicial
             // 
@@ -340,10 +344,10 @@
             this.TAFinal.HeaderText = "TAFinal";
             this.TAFinal.Name = "TAFinal";
             // 
-            // TAEnjuage
+            // TAEnjuague
             // 
-            this.TAEnjuage.HeaderText = "TAEnjuage";
-            this.TAEnjuage.Name = "TAEnjuage";
+            this.TAEnjuague.HeaderText = "TAEnjuague";
+            this.TAEnjuague.Name = "TAEnjuague";
             // 
             // TTA
             // 
@@ -355,49 +359,59 @@
             this.TipoLavado.HeaderText = "TipoLavado";
             this.TipoLavado.Name = "TipoLavado";
             // 
-            // TLinicial
+            // TLInicial
             // 
-            this.TLinicial.HeaderText = "TlFinal";
-            this.TLinicial.Name = "TLinicial";
+            this.TLInicial.HeaderText = "TLInicial";
+            this.TLInicial.Name = "TLInicial";
+            // 
+            // TLFinal
+            // 
+            this.TLFinal.HeaderText = "TLFinal";
+            this.TLFinal.Name = "TLFinal";
+            // 
+            // TLEnjuague
+            // 
+            this.TLEnjuague.HeaderText = "TLEnjuague";
+            this.TLEnjuague.Name = "TLEnjuague";
             // 
             // ttLavado
             // 
-            this.ttLavado.HeaderText = "ttLavado";
+            this.ttLavado.HeaderText = "TTLavado";
             this.ttLavado.Name = "ttLavado";
             // 
             // color1
             // 
-            this.color1.HeaderText = "color1";
+            this.color1.HeaderText = "Color1";
             this.color1.Name = "color1";
             // 
             // color2
             // 
-            this.color2.HeaderText = "color2";
+            this.color2.HeaderText = "Color2";
             this.color2.Name = "color2";
             // 
             // Titulacion
             // 
-            this.Titulacion.HeaderText = "titulacion";
+            this.Titulacion.HeaderText = "Titulacion";
             this.Titulacion.Name = "Titulacion";
             // 
             // rt1
             // 
-            this.rt1.HeaderText = "rt1";
+            this.rt1.HeaderText = "RT1";
             this.rt1.Name = "rt1";
             // 
             // rt2
             // 
-            this.rt2.HeaderText = "rt2";
+            this.rt2.HeaderText = "RT2";
             this.rt2.Name = "rt2";
             // 
             // operador
             // 
-            this.operador.HeaderText = "operador";
+            this.operador.HeaderText = "Operador";
             this.operador.Name = "operador";
             // 
             // analista
             // 
-            this.analista.HeaderText = "analista";
+            this.analista.HeaderText = "Analista";
             this.analista.Name = "analista";
             // 
             // cmbTitulacion
@@ -406,18 +420,18 @@
             this.cmbTitulacion.Items.AddRange(new object[] {
             "Acido ",
             "Alcalino"});
-            this.cmbTitulacion.Location = new System.Drawing.Point(841, 19);
+            this.cmbTitulacion.Location = new System.Drawing.Point(913, 25);
             this.cmbTitulacion.Name = "cmbTitulacion";
-            this.cmbTitulacion.Size = new System.Drawing.Size(270, 21);
+            this.cmbTitulacion.Size = new System.Drawing.Size(100, 21);
             this.cmbTitulacion.TabIndex = 24;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtRT2);
             this.groupBox2.Controls.Add(this.txtRT1);
-            this.groupBox2.Location = new System.Drawing.Point(769, 64);
+            this.groupBox2.Location = new System.Drawing.Point(841, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(342, 100);
+            this.groupBox2.Size = new System.Drawing.Size(233, 100);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultados";
@@ -529,7 +543,7 @@
             this.toolStripBtnEliminar,
             this.toolStripBtnBuscar,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(1178, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(1180, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(64, 661);
             this.toolStrip1.TabIndex = 27;
@@ -737,7 +751,7 @@
             this.cmbOperador.FormattingEnabled = true;
             this.cmbOperador.Location = new System.Drawing.Point(841, 182);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(270, 21);
+            this.cmbOperador.Size = new System.Drawing.Size(233, 21);
             this.cmbOperador.TabIndex = 31;
             // 
             // label20
@@ -768,7 +782,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoNutrical.Properties.Resources.nutrical2;
-            this.ClientSize = new System.Drawing.Size(1242, 661);
+            this.ClientSize = new System.Drawing.Size(1244, 661);
             this.Controls.Add(this.cmbSolucion2);
             this.Controls.Add(this.cmbOperador);
             this.Controls.Add(this.label20);
@@ -875,14 +889,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Circuito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn MInicial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mfinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Menjuage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MEnjuague;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAInicial;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TAEnjuage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TAEnjuague;
         private System.Windows.Forms.DataGridViewTextBoxColumn TTA;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoLavado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TLinicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLEnjuague;
         private System.Windows.Forms.DataGridViewTextBoxColumn ttLavado;
         private System.Windows.Forms.DataGridViewTextBoxColumn color1;
         private System.Windows.Forms.DataGridViewTextBoxColumn color2;

@@ -12,7 +12,7 @@ namespace ProyectoNutrical.Models
         {
         }
 
-        public ModelEvaporador(int pIdLinea, string pCircuito, string pFecha, string pMuestra, string pMInicial,
+        public ModelEvaporador(int pIdLinea, string pCircuito, string pFecha, string pMInicial,
             string pMFinal, string pMEnjuague, string pTAInicial,
             string pTAFinal, string pTAEnjuague, string pTTA, string pTipoLavado, string pTLInicial, string pTLFinal,
             string pTLEnjuague, string pTTLavado, string pColor1, string pColor2,
@@ -21,7 +21,6 @@ namespace ProyectoNutrical.Models
             IdLinea = pIdLinea;
             Circuito = pCircuito;
             Fecha = pFecha;
-            Muestra = pMuestra;
             MInicial = pMInicial;
             MFinal = pMFinal;
             MEnjuague = pMEnjuague;
@@ -46,7 +45,6 @@ namespace ProyectoNutrical.Models
         public int IdLinea { get; set; }
         public string Circuito { get; set; }
         public string Fecha { get; set; }
-        public string Muestra { get; set; }
         public string MInicial { get; set; }
         public string MFinal { get; set; }
         public string MEnjuague { get; set; }
@@ -67,13 +65,8 @@ namespace ProyectoNutrical.Models
         public string Operador { get; set; }
         public string Analista { get; set; }
 
-        internal static int Eliminar(int idLinea1, int idLinea2)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
-        ///     metodo para mostrar los tipolavado y titulacion los combobox
+        ///     metodo para mostrar operador y analista
         /// </summary>
         public static List<ModelEvaporador> Llenarcombo()
         {
@@ -86,19 +79,18 @@ namespace ProyectoNutrical.Models
                 var pEvaporador = new ModelEvaporador
                 {
                     IdLinea = reader.GetInt32(0),
-                    TipoLavado = reader.GetString(1),
-                    Titulacion = reader.GetString(2)
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
                 };
                 lista.Add(pEvaporador);
             }
             return lista;
         }
 
-        public static List<ModelEvaporador> Llenargrid()
+        public static List<ModelEvaporador> LlenarGridView()
         {
             var lista = new List<ModelEvaporador>();
-            var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand("SELECT * FROM evaporador", connec);
+            var comando = new MySqlCommand("SELECT * FROM evaporador", ConexionMySql.ObtenerConexion());
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -107,26 +99,25 @@ namespace ProyectoNutrical.Models
                     IdLinea = reader.GetInt32(0),
                     Circuito = reader.GetString(1),
                     Fecha = reader.GetString(2),
-                    Muestra = reader.GetString(3),
-                    MInicial = reader.GetString(4),
-                    MFinal = reader.GetString(5),
-                    MEnjuague = reader.GetString(6),
-                    TAInicial = reader.GetString(7),
-                    TAFinal = reader.GetString(8),
-                    TAEnjuague = reader.GetString(9),
-                    TTA = reader.GetString(10),
-                    TipoLavado = reader.GetString(11),
-                    TLInicial = reader.GetString(12),
-                    TLFinal = reader.GetString(13),
-                    TLEnjuague = reader.GetString(14),
-                    TTLavado = reader.GetString(15),
-                    Color1 = reader.GetString(16),
-                    Color2 = reader.GetString(17),
-                    Titulacion = reader.GetString(18),
-                    RT1 = reader.GetString(19),
-                    RT2 = reader.GetString(20),
-                    Operador = reader.GetString(21),
-                    Analista = reader.GetString(22)
+                    MInicial = reader.GetString(3),
+                    MFinal = reader.GetString(4),
+                    MEnjuague = reader.GetString(5),
+                    TAInicial = reader.GetString(6),
+                    TAFinal = reader.GetString(7),
+                    TAEnjuague = reader.GetString(8),
+                    TTA = reader.GetString(9),
+                    TipoLavado = reader.GetString(10),
+                    TLInicial = reader.GetString(11),
+                    TLFinal = reader.GetString(12),
+                    TLEnjuague = reader.GetString(13),
+                    TTLavado = reader.GetString(14),
+                    Color1 = reader.GetString(15),
+                    Color2 = reader.GetString(16),
+                    Titulacion = reader.GetString(17),
+                    RT1 = reader.GetString(18),
+                    RT2 = reader.GetString(19),
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
                 };
                 lista.Add(pModelEvaporador);
             }
@@ -142,123 +133,132 @@ namespace ProyectoNutrical.Models
             var connec = ConexionMySql.ObtenerConexion();
             var comando =
                 new MySqlCommand(
-                    $"CALL spInsertEvaporador('{pMr.IdLinea}','{pMr.Circuito}','{pMr.Fecha}','{pMr.Muestra}','{pMr.MInicial}','{pMr.MFinal}','{pMr.MEnjuague}','{pMr.TAInicial}','{pMr.TAFinal}','{pMr.TAEnjuague}','{pMr.TTA}','{pMr.TipoLavado}','{pMr.TLInicial}','{pMr.TLFinal}','{pMr.TLEnjuague}','{pMr.TTLavado}','{pMr.Color1}','{pMr.Color2}','{pMr.Titulacion}','{pMr.RT1}','{pMr.RT2}','{pMr.Operador}','{pMr.Analista}')",
+                    $"CALL sp_Evaporador('{pMr.IdLinea}','{pMr.Circuito}','{pMr.Fecha}','{pMr.MInicial}','{pMr.MFinal}','{pMr.MEnjuague}','{pMr.TAInicial}','{pMr.TAFinal}','{pMr.TAEnjuague}','{pMr.TTA}','{pMr.TipoLavado}','{pMr.TLInicial}','{pMr.TLFinal}','{pMr.TLEnjuague}','{pMr.TTLavado}','{pMr.Color1}','{pMr.Color2}','{pMr.Titulacion}','{pMr.RT1}','{pMr.RT2}','{pMr.Operador}','{pMr.Analista}')",
                     connec);
             var retorno = comando.ExecuteNonQuery();
             return retorno;
         }
 
-        /// <summary>
-        ///     metodo buscar
-        /// </summary>
-        public static List<ModelEvaporador> Buscar(string pFecha, string pTipoLavado, string pTitulacion)
+        public static List<ModelEvaporador> Buscar(string pFecha)
         {
             var lista = new List<ModelEvaporador>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando =
-                new MySqlCommand(
-                    $"SELECT * FROM viewevaporador WHERE Fecha='{pFecha}' OR TipoLavado='{pTipoLavado}' OR Titulacion='{pTitulacion}'",
-                    connec);
+            var comando = new MySqlCommand($"SELECT * FROM evaporador WHERE Fecha>'{pFecha}'", connec);
             var reader = comando.ExecuteReader();
-            var pRecepcion = new ModelEvaporador
-            {
-                IdLinea = reader.GetInt32(0),
-                Circuito = reader.GetString(1),
-                Fecha = reader.GetString(2),
-                Muestra = reader.GetString(3),
-                MInicial = reader.GetString(4),
-                MFinal = reader.GetString(5),
-                MEnjuague = reader.GetString(6),
-                TAInicial = reader.GetString(7),
-                TAFinal = reader.GetString(8),
-                TAEnjuague = reader.GetString(9),
-                TTA = reader.GetString(10),
-                TipoLavado = reader.GetString(11),
-                TLInicial = reader.GetString(12),
-                TLFinal = reader.GetString(13),
-                TLEnjuague = reader.GetString(14),
-                TTLavado = reader.GetString(15),
-                Color1 = reader.GetString(16),
-                Color2 = reader.GetString(17),
-                Titulacion = reader.GetString(18),
-                RT1 = reader.GetString(19),
-                RT2 = reader.GetString(20),
-                Operador = reader.GetString(21),
-                Analista = reader.GetString(22)
-            };
             while (reader.Read())
-                lista.Add(pRecepcion);
+            {
+                var pEvaporador = new ModelEvaporador
+                {
+                    IdLinea = reader.GetInt32(0),
+                    Circuito = reader.GetString(1),
+                    Fecha = reader.GetString(2),
+                    MInicial = reader.GetString(3),
+                    MFinal = reader.GetString(4),
+                    MEnjuague = reader.GetString(5),
+                    TAInicial = reader.GetString(6),
+                    TAFinal = reader.GetString(7),
+                    TAEnjuague = reader.GetString(8),
+                    TTA = reader.GetString(9),
+                    TipoLavado = reader.GetString(10),
+                    TLInicial = reader.GetString(11),
+                    TLFinal = reader.GetString(12),
+                    TLEnjuague = reader.GetString(13),
+                    TTLavado = reader.GetString(14),
+                    Color1 = reader.GetString(15),
+                    Color2 = reader.GetString(16),
+                    Titulacion = reader.GetString(17),
+                    RT1 = reader.GetString(18),
+                    RT2 = reader.GetString(19),
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
+                };
+                lista.Add(pEvaporador);
+            }
             return lista;
         }
 
-        internal static int Actualizar(ModelEvaporador pEvaporador)
+        public static ModelEvaporador ObtenerEvaporador(int IdLinea)
         {
-            throw new NotImplementedException();
-        }
-
-        public static ModelEvaporador ObtenerEvaporador(int pIdEvaporador)
-        {
-            var pMr = new ModelEvaporador();
+            var pMe = new ModelEvaporador();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM evaporador WHERE ID ='{pIdEvaporador}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM evaporador WHERE IDLinea ='{IdLinea}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 EvaporadorSelect.IdLinea = reader.GetInt32(0);
                 EvaporadorSelect.Circuito = reader.GetString(1);
                 EvaporadorSelect.Fecha = reader.GetString(2);
-                EvaporadorSelect.Muestra = reader.GetString(3);
-                EvaporadorSelect.MInicial = reader.GetString(4);
-                EvaporadorSelect.MFinal = reader.GetString(5);
-                EvaporadorSelect.MEnjuague = reader.GetString(6);
-                EvaporadorSelect.TAInicial = reader.GetString(7);
-                EvaporadorSelect.TAEnjuague = reader.GetString(9);
-                EvaporadorSelect.TTA = reader.GetString(10);
-                EvaporadorSelect.TipoLavado = reader.GetString(11);
-                EvaporadorSelect.TLInicial = reader.GetString(12);
-                EvaporadorSelect.TLEnjuague = reader.GetString(14);
-                EvaporadorSelect.TTLavado = reader.GetString(15);
-                EvaporadorSelect.Color1 = reader.GetString(16);
-                EvaporadorSelect.Color2 = reader.GetString(17);
-                EvaporadorSelect.Titulacion = reader.GetString(18);
-                EvaporadorSelect.RT1 = reader.GetString(19);
-                EvaporadorSelect.RT2 = reader.GetString(20);
-                EvaporadorSelect.Operador = reader.GetString(21);
-                EvaporadorSelect.Analista = reader.GetString(22);
+                EvaporadorSelect.MInicial = reader.GetString(3);
+                EvaporadorSelect.MFinal = reader.GetString(4);
+                EvaporadorSelect.MEnjuague = reader.GetString(5);
+                EvaporadorSelect.TAInicial = reader.GetString(6);
+                EvaporadorSelect.TAFinal = reader.GetString(7);
+                EvaporadorSelect.TAEnjuague = reader.GetString(8);
+                EvaporadorSelect.TTA = reader.GetString(9);
+                EvaporadorSelect.TipoLavado = reader.GetString(10);
+                EvaporadorSelect.TLInicial = reader.GetString(11);
+                EvaporadorSelect.TLFinal = reader.GetString(12);
+                EvaporadorSelect.TLEnjuague = reader.GetString(13);
+                EvaporadorSelect.TTLavado = reader.GetString(14);
+                EvaporadorSelect.Color1 = reader.GetString(15);
+                EvaporadorSelect.Color2 = reader.GetString(16);
+                EvaporadorSelect.Titulacion = reader.GetString(17);
+                EvaporadorSelect.RT1 = reader.GetString(18);
+                EvaporadorSelect.RT2 = reader.GetString(19);
+                EvaporadorSelect.Operador = reader.GetString(20);
+                EvaporadorSelect.Analista = reader.GetString(21);
             }
             connec.Close();
-            return pMr;
+            return pMe;
         }
-
-
-        /// <summary>
-        ///     metodo para actualizar
-        /// </summary>
-        public static int Actualizar(ModelEvaporador pEvaporador, int pEva)
+        public static int Exportar(ModelEvaporador pEvaporador, int pOperacion)
         {
             var retorno = 0;
             var conexion = ConexionMySql.ObtenerConexion();
             MySqlCommand comando;
 
-            switch (pEva)
+            switch (pOperacion)
             {
-                case 1: //actualizar los datos de Recepcion
+                case 1: //exportar todos los datos
                     comando = new MySqlCommand(
-                        $"CALL ActualizarRecepcion('{pEva}','{pEvaporador.IdLinea}','{pEvaporador.Circuito}','{pEvaporador.Muestra}','{pEvaporador.MInicial}','{pEvaporador.MFinal}','{pEvaporador.MEnjuague}','{pEvaporador.TAInicial}','{pEvaporador.TAFinal}','{pEvaporador.TAEnjuague}','{pEvaporador.TTA}','{pEvaporador.TipoLavado}','{pEvaporador.TLInicial}','{pEvaporador.TLFinal}','{pEvaporador.TLEnjuague}','{pEvaporador.TTLavado}','{pEvaporador.Color1}','{pEvaporador.Color2}','{pEvaporador.Titulacion}','{pEvaporador.RT1}','{pEvaporador.RT2}','{pEvaporador.Operador}','{pEvaporador.Analista}','a','a')",
+                        $"Select * from evaporador('{pOperacion}','{pEvaporador.IdLinea}','{pEvaporador.Circuito}','{pEvaporador.Fecha}','{pEvaporador.MInicial}','{pEvaporador.MFinal}','{pEvaporador.MEnjuague}','{pEvaporador.TAInicial}','{pEvaporador.TAFinal}','{pEvaporador.TAEnjuague}','{pEvaporador.TTA}','{pEvaporador.TipoLavado}','{pEvaporador.TLInicial}','{pEvaporador.TLFinal}','{pEvaporador.TLEnjuague}','{pEvaporador.TTLavado}','{pEvaporador.Color1}','{pEvaporador.Color2}','{pEvaporador.Titulacion}','{pEvaporador.RT1}','{pEvaporador.RT2}','{pEvaporador.Operador}','{pEvaporador.Analista}'),'a','a')",
+                        conexion);
+                    retorno = comando.ExecuteNonQuery();
+                    break;
+                case 2: //exportar los datos de muestras
+                    comando = new MySqlCommand(
+                        $"Select * from evaporador('{pOperacion}','{pEvaporador.IdLinea}','{pEvaporador.Fecha}','{pEvaporador.MInicial}','a','a','{pEvaporador.MFinal}','{pEvaporador.MEnjuague}')",
+                        conexion);
+                    retorno = comando.ExecuteNonQuery();
+                    break;
+                case 3: //exportar los datos de titulacion
+                    comando = new MySqlCommand(
+                        $"Select * from evaporador('{pOperacion}','{pEvaporador.IdLinea}','{pEvaporador.Fecha}','{pEvaporador.Titulacion}','{pEvaporador.RT1}','{pEvaporador.RT2}')",
                         conexion);
                     retorno = comando.ExecuteNonQuery();
                     break;
             }
             return retorno;
         }
+        /// <summary>
+        ///     metodo para actualizar
+        /// </summary>
+        public static int Actualizar(ModelEvaporador pEvaporador)
+        {
+            var retorno = 0;
+            var conexion = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand($"UPDATE evaporador SET Circuito='{pEvaporador.Circuito}', Fecha='{pEvaporador.Fecha}', MInicial='{pEvaporador.MInicial}', MFinal='{pEvaporador.MFinal}', MEnjuague='{pEvaporador.MEnjuague}', TAInicial='{pEvaporador.TAInicial}', TAFinal='{pEvaporador.TAFinal}', TAEnjuague='{pEvaporador.TAEnjuague}', TTAnalisis='{pEvaporador.TTA}', TipoLavado='{pEvaporador.TipoLavado}', TLInicial='{pEvaporador.TLInicial}', TLFinal='{pEvaporador.TLFinal}', TLEnjuague='{pEvaporador.TLEnjuague}', TTLavado='{pEvaporador.TTLavado}', Color1='{pEvaporador.Color1}', Color2='{pEvaporador.Color2}', Titulacion='{pEvaporador.Titulacion}', RT1='{pEvaporador.RT1}', RT2='{pEvaporador.RT2}', Operador='{pEvaporador.Operador}', Analista='{pEvaporador.Analista}' WHERE IDLinea='{pEvaporador.IdLinea}'", conexion);
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
+        }
 
         /// <summary>
         ///     metodo para eliminar
         /// </summary>
-        public static int Eliminar(int pIdMe)
+        public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"DELETE FROM evaporador WHERE ID = '{pIdMe}'", conexion);
+            var comando = new MySqlCommand($"CALL eliminar_Evaporador('{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
@@ -269,7 +269,6 @@ namespace ProyectoNutrical.Models
             public static int IdLinea { get; set; }
             public static string Circuito { get; set; }
             public static string Fecha { get; set; }
-            public static string Muestra { get; set; }
             public static string MInicial { get; set; }
             public static string MFinal { get; set; }
             public static string MEnjuague { get; set; }
@@ -290,6 +289,8 @@ namespace ProyectoNutrical.Models
             public static string Operador { get; set; }
             public static string Analista { get; set; }
         }
+
+
         public static void DisplayInExcel()
         {
             var datename = "Evaporador" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
@@ -309,27 +310,26 @@ namespace ProyectoNutrical.Models
 
             spreadSheet.Cells["A1"].Value = "Circuito";
             spreadSheet.Cells["B1"].Value = "Fecha";
-            spreadSheet.Cells["C1"].Value = "Muestra";
-            spreadSheet.Cells["D1"].Value = "MInicial";
-            spreadSheet.Cells["E1"].Value = "MFinal";
-            spreadSheet.Cells["F1"].Value = "MEnjuague";
-            spreadSheet.Cells["G1"].Value = "TAInicial";
-            spreadSheet.Cells["H1"].Value = "TAFinal";
-            spreadSheet.Cells["I1"].Value = "TAEnjuague";
-            spreadSheet.Cells["J1"].Value = "TTAnalisis";
-            spreadSheet.Cells["K1"].Value = "TipoLavado";
-            spreadSheet.Cells["L1"].Value = "TInicial";
-            spreadSheet.Cells["M1"].Value = "TFinal";
-            spreadSheet.Cells["N1"].Value = "TEnjuague";
-            spreadSheet.Cells["O1"].Value = "TTLavado";
-            spreadSheet.Cells["P1"].Value = "Color";
-            spreadSheet.Cells["Q1"].Value = "Color2";
-            spreadSheet.Cells["R1"].Value = "Titulacion";
-            spreadSheet.Cells["S1"].Value = "RT1";
-            spreadSheet.Cells["T1"].Value = "RT2";
-            spreadSheet.Cells["U1"].Value = "Operador";
-            spreadSheet.Cells["V1"].Value = "Analista";
-            spreadSheet.Cells["A1:V1"].Style.Font.Bold = true;
+            spreadSheet.Cells["C1"].Value = "MInicial";
+            spreadSheet.Cells["D1"].Value = "MFinal";
+            spreadSheet.Cells["E1"].Value = "MEnjuague";
+            spreadSheet.Cells["F1"].Value = "TAInicial";
+            spreadSheet.Cells["G1"].Value = "TAFinal";
+            spreadSheet.Cells["H1"].Value = "TAEnjuague";
+            spreadSheet.Cells["I1"].Value = "TTAnalisis";
+            spreadSheet.Cells["J1"].Value = "TipoLavado";
+            spreadSheet.Cells["K1"].Value = "TInicial";
+            spreadSheet.Cells["L1"].Value = "TFinal";
+            spreadSheet.Cells["M1"].Value = "TEnjuague";
+            spreadSheet.Cells["N1"].Value = "TTLavado";
+            spreadSheet.Cells["O1"].Value = "Color";
+            spreadSheet.Cells["P1"].Value = "Color2";
+            spreadSheet.Cells["Q1"].Value = "Titulacion";
+            spreadSheet.Cells["R1"].Value = "RT1";
+            spreadSheet.Cells["S1"].Value = "RT2";
+            spreadSheet.Cells["T1"].Value = "Operador";
+            spreadSheet.Cells["U1"].Value = "Analista";
+            spreadSheet.Cells["A1:U1"].Style.Font.Bold = true;
 
 
             var connec = ConexionMySql.ObtenerConexion();
@@ -339,27 +339,102 @@ namespace ProyectoNutrical.Models
             while (reader.Read())
             {
                 spreadSheet.Cells["A" + currentRow].Value = reader.GetString(1);
-                spreadSheet.Cells["B" + currentRow].Value = reader.GetInt32(2);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(3);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(4);
+                spreadSheet.Cells["E" + currentRow].Value = reader.GetString(5);
+                spreadSheet.Cells["F" + currentRow].Value = reader.GetString(6);
+                spreadSheet.Cells["G" + currentRow].Value = reader.GetString(7);
+                spreadSheet.Cells["H" + currentRow].Value = reader.GetString(8);
+                spreadSheet.Cells["I" + currentRow].Value = reader.GetString(9);
+                spreadSheet.Cells["J" + currentRow].Value = reader.GetString(10);
+                spreadSheet.Cells["K" + currentRow].Value = reader.GetString(11);
+                spreadSheet.Cells["L" + currentRow].Value = reader.GetString(12);
+                spreadSheet.Cells["M" + currentRow].Value = reader.GetString(13);
+                spreadSheet.Cells["N" + currentRow].Value = reader.GetString(14);
+                spreadSheet.Cells["O" + currentRow].Value = reader.GetString(15);
+                spreadSheet.Cells["P" + currentRow].Value = reader.GetString(16);
+                spreadSheet.Cells["Q" + currentRow].Value = reader.GetString(17);
+                spreadSheet.Cells["R" + currentRow].Value = reader.GetString(18);
+                spreadSheet.Cells["S" + currentRow].Value = reader.GetString(19);
+                spreadSheet.Cells["T" + currentRow].Value = reader.GetString(20);
+                spreadSheet.Cells["U" + currentRow].Value = reader.GetString(21);
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
+        }
+        public static void DisplayInExcelMuestras()
+        {
+            var datename = "Muestras" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\Users\\Diego Maciel Acevedo\\Desktop\\ExcelEvaporador\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si si lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("EVAPORADOR");
+
+            spreadSheet.Cells["A1"].Value = "Fecha";
+            spreadSheet.Cells["B1"].Value = "MInicial";
+            spreadSheet.Cells["C1"].Value = "MFinal";
+            spreadSheet.Cells["D1"].Value = "MEnjuague";
+            spreadSheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM evaporador", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetString(2);
                 spreadSheet.Cells["C" + currentRow].Value = reader.GetDouble(3);
                 spreadSheet.Cells["D" + currentRow].Value = reader.GetDouble(4);
                 spreadSheet.Cells["E" + currentRow].Value = reader.GetDouble(5);
-                spreadSheet.Cells["F" + currentRow].Value = reader.GetDouble(6);
-                spreadSheet.Cells["G" + currentRow].Value = reader.GetDouble(7);
-                spreadSheet.Cells["H" + currentRow].Value = reader.GetDouble(8);
-                spreadSheet.Cells["I" + currentRow].Value = reader.GetDouble(9);
-                spreadSheet.Cells["J" + currentRow].Value = reader.GetDouble(10);
-                spreadSheet.Cells["K" + currentRow].Value = reader.GetDouble(11);
-                spreadSheet.Cells["L" + currentRow].Value = reader.GetDouble(12);
-                spreadSheet.Cells["M" + currentRow].Value = reader.GetDouble(13);
-                spreadSheet.Cells["N" + currentRow].Value = reader.GetDouble(14);
-                spreadSheet.Cells["O" + currentRow].Value = reader.GetString(15);
-                spreadSheet.Cells["P" + currentRow].Value = reader.GetDouble(16);
-                spreadSheet.Cells["Q" + currentRow].Value = reader.GetDouble(17);
-                spreadSheet.Cells["Q" + currentRow].Value = reader.GetDouble(18);
-                spreadSheet.Cells["R" + currentRow].Value = reader.GetDouble(19);
-                spreadSheet.Cells["S" + currentRow].Value = reader.GetDouble(20);
-                spreadSheet.Cells["T" + currentRow].Value = reader.GetDouble(21);
-                spreadSheet.Cells["U" + currentRow].Value = reader.GetDouble(22);
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
+        }
+        public static void DisplayInExcelTitulaciones()
+        {
+            var datename = "Titulaciones" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\Users\\Diego Maciel Acevedo\\Desktop\\ExcelEvaporador\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si si lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("EVAPORADOR");
+
+            spreadSheet.Cells["A1"].Value = "Fecha";
+            spreadSheet.Cells["B1"].Value = "Titulacion";
+            spreadSheet.Cells["C1"].Value = "RT1";
+            spreadSheet.Cells["D1"].Value = "RT2";
+            spreadSheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM evaporador", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(17);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(18);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(19);
                 currentRow++;
             }
 

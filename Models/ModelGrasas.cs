@@ -13,7 +13,7 @@ namespace ProyectoNutrical.Models
         {
         }
 
-        public ModelGrasas(int pIdLinea, string pCircuito, string pFecha, string pMuestra, string pMInicial,
+        public ModelGrasas(int pIdLinea, string pCircuito, string pFecha, string pMInicial,
             string pMFinal, string pMEnjuague, string pTAInicial,
             string pTAFinal, string pTAEnjuague, string pTTA, string pTipoLavado, string pTLInicial, string pTLFinal,
             string pTLEnjuague, string pTTLavado, string pColor1, string pColor2,
@@ -22,7 +22,6 @@ namespace ProyectoNutrical.Models
             IdLinea = pIdLinea;
             Circuito = pCircuito;
             Fecha = pFecha;
-            Muestra = pMuestra;
             MInicial = pMInicial;
             MFinal = pMFinal;
             MEnjuague = pMEnjuague;
@@ -47,7 +46,6 @@ namespace ProyectoNutrical.Models
         public int IdLinea { get; set; }
         public string Circuito { get; set; }
         public string Fecha { get; set; }
-        public string Muestra { get; set; }
         public string MInicial { get; set; }
         public string MFinal { get; set; }
         public string MEnjuague { get; set; }
@@ -68,10 +66,6 @@ namespace ProyectoNutrical.Models
         public string Operador { get; set; }
         public string Analista { get; set; }
 
-        internal static int Eliminar(int idLinea1, int idLinea2)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         ///     metodo para mostrar los tipolavado y titulacion los combobox
@@ -87,8 +81,8 @@ namespace ProyectoNutrical.Models
                 var pGR = new ModelGrasas
                 {
                     IdLinea = reader.GetInt32(0),
-                    TipoLavado = reader.GetString(1),
-                    Titulacion = reader.GetString(2)
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
                 };
                 lista.Add(pGR);
             }
@@ -108,35 +102,29 @@ namespace ProyectoNutrical.Models
                     IdLinea = reader.GetInt32(0),
                     Circuito = reader.GetString(1),
                     Fecha = reader.GetString(2),
-                    Muestra = reader.GetString(3),
-                    MInicial = reader.GetString(4),
-                    MFinal = reader.GetString(5),
-                    MEnjuague = reader.GetString(6),
-                    TAInicial = reader.GetString(7),
-                    TAFinal = reader.GetString(8),
-                    TAEnjuague = reader.GetString(9),
-                    TTA = reader.GetString(10),
-                    TipoLavado = reader.GetString(11),
-                    TLInicial = reader.GetString(12),
-                    TLFinal = reader.GetString(13),
-                    TLEnjuague = reader.GetString(14),
-                    TTLavado = reader.GetString(15),
-                    Color1 = reader.GetString(16),
-                    Color2 = reader.GetString(17),
-                    Titulacion = reader.GetString(18),
-                    RT1 = reader.GetString(19),
-                    RT2 = reader.GetString(20),
-                    Operador = reader.GetString(21),
-                    Analista = reader.GetString(22)
+                    MInicial = reader.GetString(3),
+                    MFinal = reader.GetString(4),
+                    MEnjuague = reader.GetString(5),
+                    TAInicial = reader.GetString(6),
+                    TAFinal = reader.GetString(7),
+                    TAEnjuague = reader.GetString(8),
+                    TTA = reader.GetString(9),
+                    TipoLavado = reader.GetString(10),
+                    TLInicial = reader.GetString(11),
+                    TLFinal = reader.GetString(12),
+                    TLEnjuague = reader.GetString(13),
+                    TTLavado = reader.GetString(14),
+                    Color1 = reader.GetString(15),
+                    Color2 = reader.GetString(16),
+                    Titulacion = reader.GetString(17),
+                    RT1 = reader.GetString(18),
+                    RT2 = reader.GetString(19),
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
                 };
                 lista.Add(pGrasas);
             }
             return lista;
-        }
-
-        internal static int Actualizar(ModelGrasas pGR)
-        {
-            throw new NotImplementedException();
         }
 
 
@@ -148,104 +136,111 @@ namespace ProyectoNutrical.Models
             var connec = ConexionMySql.ObtenerConexion();
             var comando =
                 new MySqlCommand(
-                    $"CALL spInsertSecadorVertical('{pMgr.IdLinea}','{pMgr.Circuito}','{pMgr.Fecha}','{pMgr.Muestra}','{pMgr.MInicial}','{pMgr.MFinal}','{pMgr.MEnjuague}','{pMgr.TAInicial}','{pMgr.TAFinal}','{pMgr.TAEnjuague}','{pMgr.TTA}','{pMgr.TipoLavado}','{pMgr.TLInicial}','{pMgr.TLFinal}','{pMgr.TLEnjuague}','{pMgr.TTLavado}','{pMgr.Color1}','{pMgr.Color2}','{pMgr.Titulacion}','{pMgr.RT1}','{pMgr.RT2}','{pMgr.Operador}','{pMgr.Analista}')",
+                    $"CALL sp_Grasas('{pMgr.IdLinea}','{pMgr.Circuito}','{pMgr.Fecha}','{pMgr.MInicial}','{pMgr.MFinal}','{pMgr.MEnjuague}','{pMgr.TAInicial}','{pMgr.TAFinal}','{pMgr.TAEnjuague}','{pMgr.TTA}','{pMgr.TipoLavado}','{pMgr.TLInicial}','{pMgr.TLFinal}','{pMgr.TLEnjuague}','{pMgr.TTLavado}','{pMgr.Color1}','{pMgr.Color2}','{pMgr.Titulacion}','{pMgr.RT1}','{pMgr.RT2}','{pMgr.Operador}','{pMgr.Analista}')",
                     connec);
             var retorno = comando.ExecuteNonQuery();
             return retorno;
         }
 
-        /// <summary>
-        ///     metodo buscar
-        /// </summary>
-        public static List<ModelGrasas> Buscar(string pFecha, string pTipoLavado, string pTitulacion)
+        public static List<ModelGrasas> Buscar(string pFecha)
         {
             var lista = new List<ModelGrasas>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando =
-                new MySqlCommand(
-                    $"SELECT * FROM viewgrasas WHERE Fecha='{pFecha}' OR TipoLavado='{pTipoLavado}' OR Titulacion='{pTitulacion}'",
-                    connec);
+            var comando = new MySqlCommand($"SELECT * FROM grasas WHERE Fecha>'{pFecha}'", connec);
             var reader = comando.ExecuteReader();
-            var pGR = new ModelGrasas
-            {
-                IdLinea = reader.GetInt32(0),
-                Circuito = reader.GetString(1),
-                Fecha = reader.GetString(2),
-                Muestra = reader.GetString(3),
-                MInicial = reader.GetString(4),
-                MFinal = reader.GetString(5),
-                MEnjuague = reader.GetString(6),
-                TAInicial = reader.GetString(7),
-                TAFinal = reader.GetString(8),
-                TAEnjuague = reader.GetString(9),
-                TTA = reader.GetString(10),
-                TipoLavado = reader.GetString(11),
-                TLInicial = reader.GetString(12),
-                TLFinal = reader.GetString(13),
-                TLEnjuague = reader.GetString(14),
-                TTLavado = reader.GetString(15),
-                Color1 = reader.GetString(16),
-                Color2 = reader.GetString(17),
-                Titulacion = reader.GetString(18),
-                RT1 = reader.GetString(19),
-                RT2 = reader.GetString(20),
-                Operador = reader.GetString(21),
-                Analista = reader.GetString(22)
-            };
             while (reader.Read())
-                lista.Add(pGR);
+            {
+                var pGrasas = new ModelGrasas
+                {
+                    IdLinea = reader.GetInt32(0),
+                    Circuito = reader.GetString(1),
+                    Fecha = reader.GetString(2),
+                    MInicial = reader.GetString(3),
+                    MFinal = reader.GetString(4),
+                    MEnjuague = reader.GetString(5),
+                    TAInicial = reader.GetString(6),
+                    TAFinal = reader.GetString(7),
+                    TAEnjuague = reader.GetString(8),
+                    TTA = reader.GetString(9),
+                    TipoLavado = reader.GetString(10),
+                    TLInicial = reader.GetString(11),
+                    TLFinal = reader.GetString(12),
+                    TLEnjuague = reader.GetString(13),
+                    TTLavado = reader.GetString(14),
+                    Color1 = reader.GetString(15),
+                    Color2 = reader.GetString(16),
+                    Titulacion = reader.GetString(17),
+                    RT1 = reader.GetString(18),
+                    RT2 = reader.GetString(19),
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
+                };
+                lista.Add(pGrasas);
+            }
             return lista;
         }
 
-        public static ModelGrasas ObtenerGR(int pIdGrasas)
+        public static ModelGrasas ObtenerGR(int IdLinea)
         {
             var pMsv = new ModelGrasas();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM grasas WHERE ID ='{pIdGrasas}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM grasas WHERE IDLinea ='{IdLinea}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 GrasasSelect.IdLinea = reader.GetInt32(0);
                 GrasasSelect.Circuito = reader.GetString(1);
                 GrasasSelect.Fecha = reader.GetString(2);
-                GrasasSelect.Muestra = reader.GetString(3);
-                GrasasSelect.MInicial = reader.GetString(4);
-                GrasasSelect.MFinal = reader.GetString(5);
-                GrasasSelect.MEnjuague = reader.GetString(6);
-                GrasasSelect.TAInicial = reader.GetString(7);
-                GrasasSelect.TAEnjuague = reader.GetString(9);
-                GrasasSelect.TTA = reader.GetString(10);
-                GrasasSelect.TipoLavado = reader.GetString(11);
-                GrasasSelect.TLInicial = reader.GetString(12);
-                GrasasSelect.TLEnjuague = reader.GetString(14);
-                GrasasSelect.TTLavado = reader.GetString(15);
-                GrasasSelect.Color1 = reader.GetString(16);
-                GrasasSelect.Color2 = reader.GetString(17);
-                GrasasSelect.Titulacion = reader.GetString(18);
-                GrasasSelect.RT1 = reader.GetString(19);
-                GrasasSelect.RT2 = reader.GetString(20);
-                GrasasSelect.Operador = reader.GetString(21);
-                GrasasSelect.Analista = reader.GetString(22);
+                GrasasSelect.MInicial = reader.GetString(3);
+                GrasasSelect.MFinal = reader.GetString(4);
+                GrasasSelect.MEnjuague = reader.GetString(5);
+                GrasasSelect.TAInicial = reader.GetString(6);
+                GrasasSelect.TAFinal = reader.GetString(7);
+                GrasasSelect.TAEnjuague = reader.GetString(8);
+                GrasasSelect.TTA = reader.GetString(9);
+                GrasasSelect.TipoLavado = reader.GetString(10);
+                GrasasSelect.TLInicial = reader.GetString(11);
+                GrasasSelect.TLFinal = reader.GetString(12);
+                GrasasSelect.TLEnjuague = reader.GetString(13);
+                GrasasSelect.TTLavado = reader.GetString(14);
+                GrasasSelect.Color1 = reader.GetString(15);
+                GrasasSelect.Color2 = reader.GetString(16);
+                GrasasSelect.Titulacion = reader.GetString(17);
+                GrasasSelect.RT1 = reader.GetString(18);
+                GrasasSelect.RT2 = reader.GetString(19);
+                GrasasSelect.Operador = reader.GetString(20);
+                GrasasSelect.Analista = reader.GetString(21);
             }
             connec.Close();
             return pMsv;
         }
 
-
         /// <summary>
-        ///     metodo para actualizar
+        /// metodo para exportar funciona todo
         /// </summary>
-        public static int Actualizar(ModelGrasas pGrasas, int pGR)
+        public static int Exportar(ModelGrasas pGrasas, int pOperacion)
         {
             var retorno = 0;
             var conexion = ConexionMySql.ObtenerConexion();
             MySqlCommand comando;
 
-            switch (pGR)
+            switch (pOperacion)
             {
-                case 1: //actualizar los datos de Recepcion
+                case 1: //exportar todos los datos
                     comando = new MySqlCommand(
-                        $"CALL ActualizarGrasas('{pGR}','{pGrasas.IdLinea}','{pGrasas.Circuito}','{pGrasas.Muestra}','{pGrasas.MInicial}','{pGrasas.MFinal}','{pGrasas.MEnjuague}','{pGrasas.TAInicial}','{pGrasas.TAFinal}','{pGrasas.TAEnjuague}','{pGrasas.TTA}','{pGrasas.TipoLavado}','{pGrasas.TLInicial}','{pGrasas.TLFinal}','{pGrasas.TLEnjuague}','{pGrasas.TTLavado}','{pGrasas.Color1}','{pGrasas.Color2}','{pGrasas.Titulacion}','{pGrasas.RT1}','{pGrasas.RT2}','{pGrasas.Operador}','{pGrasas.Analista}','a','a')",
+                        $"Select * from grasas('{pOperacion}','{pGrasas.IdLinea}','{pGrasas.Circuito}','{pGrasas.Fecha}','{pGrasas.MInicial}','{pGrasas.MFinal}','{pGrasas.MEnjuague}','{pGrasas.TAInicial}','{pGrasas.TAFinal}','{pGrasas.TAEnjuague}','{pGrasas.TTA}','{pGrasas.TipoLavado}','{pGrasas.TLInicial}','{pGrasas.TLFinal}','{pGrasas.TLEnjuague}','{pGrasas.TTLavado}','{pGrasas.Color1}','{pGrasas.Color2}','{pGrasas.Titulacion}','{pGrasas.RT1}','{pGrasas.RT2}','{pGrasas.Operador}','{pGrasas.Analista}'),'a','a')",
+                        conexion);
+                    retorno = comando.ExecuteNonQuery();
+                    break;
+                case 2: //exportar los datos de muestras
+                    comando = new MySqlCommand(
+                        $"Select * from grasas('{pOperacion}','{pGrasas.IdLinea}','{pGrasas.Fecha}','{pGrasas.MInicial}','a','a','{pGrasas.MFinal}','{pGrasas.MEnjuague}')",
+                        conexion);
+                    retorno = comando.ExecuteNonQuery();
+                    break;
+                case 3: //exportar los datos de titulacion
+                    comando = new MySqlCommand(
+                        $"Select * from grasas('{pOperacion}','{pGrasas.IdLinea}','{pGrasas.Fecha}','{pGrasas.Titulacion}','{pGrasas.RT1}','{pGrasas.RT2}')",
                         conexion);
                     retorno = comando.ExecuteNonQuery();
                     break;
@@ -254,12 +249,24 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
+        ///     metodo para actualizar
+        /// </summary>
+        public static int Actualizar(ModelGrasas pGrasas)
+        {
+            var retorno = 0;
+            var conexion = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand($"UPDATE grasas SET Circuito='{pGrasas.Circuito}', Fecha='{pGrasas.Fecha}', MInicial='{pGrasas.MInicial}', MFinal='{pGrasas.MFinal}', MEnjuague='{pGrasas.MEnjuague}', TAInicial='{pGrasas.TAInicial}', TAFinal='{pGrasas.TAFinal}', TAEnjuague='{pGrasas.TAEnjuague}', TTAnalisis='{pGrasas.TTA}', TipoLavado='{pGrasas.TipoLavado}', TLInicial='{pGrasas.TLInicial}', TLFinal='{pGrasas.TLFinal}', TLEnjuague='{pGrasas.TLEnjuague}', TTLavado='{pGrasas.TTLavado}', Color1='{pGrasas.Color1}', Color2='{pGrasas.Color2}', Titulacion='{pGrasas.Titulacion}', RT1='{pGrasas.RT1}', RT2='{pGrasas.RT2}', Operador='{pGrasas.Operador}', Analista='{pGrasas.Analista}' WHERE IDLinea='{pGrasas.IdLinea}'", conexion);
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
+        }
+
+        /// <summary>
         ///     metodo para eliminar
         /// </summary>
-        public static int Eliminar(int pIdMgr)
+        public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"DELETE FROM grasas WHERE ID = '{pIdMgr}'", conexion);
+            var comando = new MySqlCommand($"CALL eliminar_Grasas('{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
@@ -270,7 +277,6 @@ namespace ProyectoNutrical.Models
             public static int IdLinea { get; set; }
             public static string Circuito { get; set; }
             public static string Fecha { get; set; }
-            public static string Muestra { get; set; }
             public static string MInicial { get; set; }
             public static string MFinal { get; set; }
             public static string MEnjuague { get; set; }
@@ -310,27 +316,26 @@ namespace ProyectoNutrical.Models
 
             spreadSheet.Cells["A1"].Value = "Circuito";
             spreadSheet.Cells["B1"].Value = "Fecha";
-            spreadSheet.Cells["C1"].Value = "Muestra";
-            spreadSheet.Cells["D1"].Value = "MInicial";
-            spreadSheet.Cells["E1"].Value = "MFinal";
-            spreadSheet.Cells["F1"].Value = "MEnjuague";
-            spreadSheet.Cells["G1"].Value = "TAInicial";
-            spreadSheet.Cells["H1"].Value = "TAFinal";
-            spreadSheet.Cells["I1"].Value = "TAEnjuague";
-            spreadSheet.Cells["J1"].Value = "TTAnalisis";
-            spreadSheet.Cells["K1"].Value = "TipoLavado";
-            spreadSheet.Cells["L1"].Value = "TInicial";
-            spreadSheet.Cells["M1"].Value = "TFinal";
-            spreadSheet.Cells["N1"].Value = "TEnjuague";
-            spreadSheet.Cells["O1"].Value = "TTLavado";
-            spreadSheet.Cells["P1"].Value = "Color";
-            spreadSheet.Cells["Q1"].Value = "Color2";
-            spreadSheet.Cells["R1"].Value = "Titulacion";
-            spreadSheet.Cells["S1"].Value = "RT1";
-            spreadSheet.Cells["T1"].Value = "RT2";
-            spreadSheet.Cells["U1"].Value = "Operador";
-            spreadSheet.Cells["V1"].Value = "Analista";
-            spreadSheet.Cells["A1:V1"].Style.Font.Bold = true;
+            spreadSheet.Cells["C1"].Value = "MInicial";
+            spreadSheet.Cells["D1"].Value = "MFinal";
+            spreadSheet.Cells["E1"].Value = "MEnjuague";
+            spreadSheet.Cells["F1"].Value = "TAInicial";
+            spreadSheet.Cells["G1"].Value = "TAFinal";
+            spreadSheet.Cells["H1"].Value = "TAEnjuague";
+            spreadSheet.Cells["I1"].Value = "TTAnalisis";
+            spreadSheet.Cells["J1"].Value = "TipoLavado";
+            spreadSheet.Cells["K1"].Value = "TInicial";
+            spreadSheet.Cells["L1"].Value = "TFinal";
+            spreadSheet.Cells["M1"].Value = "TEnjuague";
+            spreadSheet.Cells["N1"].Value = "TTLavado";
+            spreadSheet.Cells["O1"].Value = "Color";
+            spreadSheet.Cells["P1"].Value = "Color2";
+            spreadSheet.Cells["Q1"].Value = "Titulacion";
+            spreadSheet.Cells["R1"].Value = "RT1";
+            spreadSheet.Cells["S1"].Value = "RT2";
+            spreadSheet.Cells["T1"].Value = "Operador";
+            spreadSheet.Cells["U1"].Value = "Analista";
+            spreadSheet.Cells["A1:U1"].Style.Font.Bold = true;
 
 
             var connec = ConexionMySql.ObtenerConexion();
@@ -340,27 +345,102 @@ namespace ProyectoNutrical.Models
             while (reader.Read())
             {
                 spreadSheet.Cells["A" + currentRow].Value = reader.GetString(1);
-                spreadSheet.Cells["B" + currentRow].Value = reader.GetInt32(2);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(3);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(4);
+                spreadSheet.Cells["E" + currentRow].Value = reader.GetString(5);
+                spreadSheet.Cells["F" + currentRow].Value = reader.GetString(6);
+                spreadSheet.Cells["G" + currentRow].Value = reader.GetString(7);
+                spreadSheet.Cells["H" + currentRow].Value = reader.GetString(8);
+                spreadSheet.Cells["I" + currentRow].Value = reader.GetString(9);
+                spreadSheet.Cells["J" + currentRow].Value = reader.GetString(10);
+                spreadSheet.Cells["K" + currentRow].Value = reader.GetString(11);
+                spreadSheet.Cells["L" + currentRow].Value = reader.GetString(12);
+                spreadSheet.Cells["M" + currentRow].Value = reader.GetString(13);
+                spreadSheet.Cells["N" + currentRow].Value = reader.GetString(14);
+                spreadSheet.Cells["O" + currentRow].Value = reader.GetString(15);
+                spreadSheet.Cells["P" + currentRow].Value = reader.GetString(16);
+                spreadSheet.Cells["Q" + currentRow].Value = reader.GetString(17);
+                spreadSheet.Cells["R" + currentRow].Value = reader.GetString(18);
+                spreadSheet.Cells["S" + currentRow].Value = reader.GetString(19);
+                spreadSheet.Cells["T" + currentRow].Value = reader.GetString(20);
+                spreadSheet.Cells["U" + currentRow].Value = reader.GetString(21);
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
+        }
+        public static void DisplayInExcelMuestras()
+        {
+            var datename = "Muestras" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\Users\\Diego Maciel Acevedo\\Desktop\\ExcelGrasas\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si si lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("GRASAS");
+
+            spreadSheet.Cells["A1"].Value = "Fecha";
+            spreadSheet.Cells["B1"].Value = "MInicial";
+            spreadSheet.Cells["C1"].Value = "MFinal";
+            spreadSheet.Cells["D1"].Value = "MEnjuague";
+            spreadSheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM grasas", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetString(2);
                 spreadSheet.Cells["C" + currentRow].Value = reader.GetDouble(3);
                 spreadSheet.Cells["D" + currentRow].Value = reader.GetDouble(4);
                 spreadSheet.Cells["E" + currentRow].Value = reader.GetDouble(5);
-                spreadSheet.Cells["F" + currentRow].Value = reader.GetDouble(6);
-                spreadSheet.Cells["G" + currentRow].Value = reader.GetDouble(7);
-                spreadSheet.Cells["H" + currentRow].Value = reader.GetDouble(8);
-                spreadSheet.Cells["I" + currentRow].Value = reader.GetDouble(9);
-                spreadSheet.Cells["J" + currentRow].Value = reader.GetDouble(10);
-                spreadSheet.Cells["K" + currentRow].Value = reader.GetDouble(11);
-                spreadSheet.Cells["L" + currentRow].Value = reader.GetDouble(12);
-                spreadSheet.Cells["M" + currentRow].Value = reader.GetDouble(13);
-                spreadSheet.Cells["N" + currentRow].Value = reader.GetDouble(14);
-                spreadSheet.Cells["O" + currentRow].Value = reader.GetString(15);
-                spreadSheet.Cells["P" + currentRow].Value = reader.GetDouble(16);
-                spreadSheet.Cells["Q" + currentRow].Value = reader.GetDouble(17);
-                spreadSheet.Cells["R" + currentRow].Value = reader.GetDouble(18);
-                spreadSheet.Cells["S" + currentRow].Value = reader.GetDouble(19);
-                spreadSheet.Cells["T" + currentRow].Value = reader.GetDouble(20);
-                spreadSheet.Cells["U" + currentRow].Value = reader.GetDouble(21);
-                spreadSheet.Cells["V" + currentRow].Value = reader.GetDouble(22);
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
+        }
+        public static void DisplayInExcelTitulaciones()
+        {
+            var datename = "Titulaciones" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\Users\\Diego Maciel Acevedo\\Desktop\\ExcelGrasas\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si si lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("GRASAS");
+
+            spreadSheet.Cells["A1"].Value = "Fecha";
+            spreadSheet.Cells["B1"].Value = "Titulacion";
+            spreadSheet.Cells["C1"].Value = "RT1";
+            spreadSheet.Cells["D1"].Value = "RT2";
+            spreadSheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM grasas", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(17);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(18);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(19);
                 currentRow++;
             }
 

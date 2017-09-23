@@ -38,8 +38,8 @@ namespace ProyectoNutrical
                 row.Cells[17].Value = item.Titulacion;
                 row.Cells[18].Value = item.RT1;
                 row.Cells[19].Value = item.RT2;
-                //row.Cells[20].Value = item.Operador;
-                //row.Cells[21].Value = item.Analista;
+                row.Cells[20].Value = item.Operador;
+                row.Cells[21].Value = item.Analista;
                 dtgRecepcion.Rows.Add(row);
             }
             
@@ -122,7 +122,7 @@ namespace ProyectoNutrical
 
 
             };
-            if (ModelRecepcion.Actualizar(rTodo, 1) > 0)
+            if (ModelRecepcion.Actualizar(rTodo) > 0)
                 MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             else
@@ -150,7 +150,7 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgRecepcion.DataSource = ModelRecepcion.Buscar(dtpRecepcion.Text, cmbLavado.Text, cmbTitulacion.Text);
+            dtgRecepcion.DataSource = ModelRecepcion.Buscar(dtpRecepcion.Value.Year + "-" + dtpRecepcion.Value.Month + "-" + dtpRecepcion.Value.Day);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -191,10 +191,11 @@ namespace ProyectoNutrical
             {
                 if (dtgRecepcion.CurrentRow != null)
                 {
-                    var id = Convert.ToInt32(dtgRecepcion.CurrentRow.Cells[0].Value);
-                    ModelTrabajadores.ObtenerTrabajador(id);
+                    var idLinea = Convert.ToInt32(dtgRecepcion.CurrentRow.Cells[0].Value);
+                    ModelRecepcion.ObtenerRecepcion(idLinea);
                 }
                 cmbCircuito.SelectedItem = ModelRecepcion.RecepcionSelect.Circuito;
+                dtpRecepcion.Text = ModelRecepcion.RecepcionSelect.Fecha;
                 txtMInicial.Text = ModelRecepcion.RecepcionSelect.MEnjuague;
                 txtMFinal.Text = ModelRecepcion.RecepcionSelect.MFinal;
                 txtMEnjuague.Text = ModelRecepcion.RecepcionSelect.MEnjuague;

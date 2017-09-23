@@ -100,7 +100,7 @@ namespace ProyectoNutrical.Models
             var connec = ConexionMySql.ObtenerConexion();
             var comando =
                 new MySqlCommand(
-                    $"CALL spInsertMilkoScan('{pMs.Identificacion}','{pMs.Rep}','{pMs.Grasa}','{pMs.Sng}','{pMs.St}','{pMs.Lactosa}','{pMs.Caseina}','{pMs.Urea}','{pMs.Densidad}','{pMs.Ph}','{pMs.Acidez}','{pMs.Crioscopia}','{pMs.Ffa}','{pMs.Fecha}','{pMs.ProtCaseina}','{pMs.ProtSuero}','{pMs.Proteina}')",
+                    $"CALL SPMilkoScan('{pMs.Identificacion}','{pMs.Rep}','{pMs.Grasa}','{pMs.Sng}','{pMs.St}','{pMs.Lactosa}','{pMs.Caseina}','{pMs.Urea}','{pMs.Densidad}','{pMs.Ph}','{pMs.Acidez}','{pMs.Crioscopia}','{pMs.Ffa}','{pMs.Fecha}','{pMs.ProtCaseina}','{pMs.ProtSuero}','{pMs.Proteina}')",
                     connec);
             var retorno = comando.ExecuteNonQuery();
             return retorno;

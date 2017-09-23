@@ -64,15 +64,13 @@ namespace ProyectoNutrical.Models
         public string Analista { get; set; }
 
         ///<summary>
-        /// falta agregar el metodo para el calculo de los tiempos en analisis y lavado y el grid no muestra
-        ///</summary>
+        /// falta agregar el metodo para el calculo de los tiempos en analisis y lavado
         
 
         public static List<ModelRecepcion> LlenarGridView()
         {
             var lista = new List<ModelRecepcion>();
-            var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand("SELECT * FROM recepcion", connec);
+            var comando = new MySqlCommand("SELECT * FROM recepcion", ConexionMySql.ObtenerConexion());
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -107,7 +105,7 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
-        ///     metodo para agregar funciona
+        ///     metodo para agregar 
         /// </summary>
         public static int Agregar(ModelRecepcion pMr)
         {
@@ -117,12 +115,12 @@ namespace ProyectoNutrical.Models
             return retorno;
         }
         /// <summary>
-        ///     metodo para eliminar aun no funciona
+        ///     metodo para eliminar 
         /// </summary>
-        public static int Eliminar(int pIdLinea)
+        public static int Eliminar(int IDLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"DELETE FROM recepcion WHERE IdLinea = '{pIdLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM recepcion WHERE IDLinea = ('{IDLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
@@ -130,42 +128,41 @@ namespace ProyectoNutrical.Models
         /// <summary>
         ///     metodo  para buscar aun no funciona
         /// </summary>
-        public static List<ModelRecepcion> Buscar(string pFecha, string pTipoLavado, string pTitulacion)
+        public static List<ModelRecepcion> Buscar(string pFecha)
         {
             var lista = new List<ModelRecepcion>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando =
-                new MySqlCommand(
-                    $"SELECT * FROM viewrecepcion WHERE Fecha='{pFecha}' OR TipoLavado='{pTipoLavado}' OR Titulacion='{pTitulacion}'",
-                    connec);
+            var comando = new MySqlCommand($"SELECT * FROM recepcion WHERE Fecha>'{pFecha}'", connec);
             var reader = comando.ExecuteReader();
-            var pRecepcion = new ModelRecepcion
-            {
-                IdLinea = reader.GetInt32(0),
-                Circuito = reader.GetString(1),
-                Fecha = reader.GetString(2),
-                MInicial = reader.GetString(3),
-                MFinal = reader.GetString(4),
-                MEnjuague = reader.GetString(5),
-                TAInicial = reader.GetString(6),
-                TAFinal = reader.GetString(7),
-                TAEnjuague = reader.GetString(8),
-                TTA = reader.GetString(9),
-                TipoLavado = reader.GetString(10),
-                TLInicial = reader.GetString(11),
-                TLFinal = reader.GetString(12),
-                TLEnjuague = reader.GetString(13),
-                TTLavado = reader.GetString(14),
-                Color1 = reader.GetString(15),
-                Color2 = reader.GetString(16),
-                Titulacion = reader.GetString(17),
-                RT1 = reader.GetString(18),
-                RT2 = reader.GetString(19),
-                Operador = reader.GetString(20),
-                Analista = reader.GetString(21)
-            };
             while (reader.Read())
+            {
+                var pRecepcion = new ModelRecepcion
+                {
+                    IdLinea = reader.GetInt32(0),
+                    Circuito = reader.GetString(1),
+                    Fecha = reader.GetString(2),
+                    MInicial = reader.GetString(3),
+                    MFinal = reader.GetString(4),
+                    MEnjuague = reader.GetString(5),
+                    TAInicial = reader.GetString(6),
+                    TAFinal = reader.GetString(7),
+                    TAEnjuague = reader.GetString(8),
+                    TTA = reader.GetString(9),
+                    TipoLavado = reader.GetString(10),
+                    TLInicial = reader.GetString(11),
+                    TLFinal = reader.GetString(12),
+                    TLEnjuague = reader.GetString(13),
+                    TTLavado = reader.GetString(14),
+                    Color1 = reader.GetString(15),
+                    Color2 = reader.GetString(16),
+                    Titulacion = reader.GetString(17),
+                    RT1 = reader.GetString(18),
+                    RT2 = reader.GetString(19),
+                    Operador = reader.GetString(20),
+                    Analista = reader.GetString(21)
+                };
                 lista.Add(pRecepcion);
+            }
             return lista;
         }
         /// <summary>
@@ -187,7 +184,7 @@ namespace ProyectoNutrical.Models
                     break;
                 case 2: //exportar los datos de muestras
                     comando = new MySqlCommand(
-                        $"Select * from recepcion('{pOperacion}','{pRecepcion.IdLinea}','{pRecepcion.Fecha}','{pRecepcion.MInicial}','a','a','a','{pRecepcion.MFinal}','{pRecepcion.MEnjuague}')",
+                        $"Select * from recepcion('{pOperacion}','{pRecepcion.IdLinea}','{pRecepcion.Fecha}','{pRecepcion.MInicial}','{pRecepcion.MFinal}','{pRecepcion.MEnjuague}')",
                         conexion);
                     retorno = comando.ExecuteNonQuery();
                     break;
@@ -200,11 +197,11 @@ namespace ProyectoNutrical.Models
             }
             return retorno;
         }
-        public static ModelRecepcion ObtenerRecepcion(int pIdRecepcion)
+        public static ModelRecepcion ObtenerRecepcion(int IdLinea)
         {
             var pMr = new ModelRecepcion();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM recepcion WHERE IdLinea ='{pIdRecepcion}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM recepcion WHERE IDLinea ='{IdLinea}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -239,26 +236,14 @@ namespace ProyectoNutrical.Models
         /// <summary>
         ///     metodo para actualizar
         /// </summary>
-        public static int Actualizar(ModelRecepcion pRecepcion, int pRec)
+        public static int Actualizar(ModelRecepcion pRecepcion)
         {
             var retorno = 0;
             var conexion = ConexionMySql.ObtenerConexion();
-            MySqlCommand comando;
-
-            switch (pRec)
-            {
-                case 1: //actualizar los datos de Recepcion
-                    comando = new MySqlCommand(
-                        $"CALL ActualizarRecepcion('{pRec}','{pRecepcion.IdLinea}','{pRecepcion.Circuito}','{pRecepcion.MInicial}','{pRecepcion.MFinal}','{pRecepcion.MEnjuague}','{pRecepcion.TAInicial}','{pRecepcion.TAFinal}','{pRecepcion.TAEnjuague}','{pRecepcion.TTA}','{pRecepcion.TipoLavado}','{pRecepcion.TLInicial}','{pRecepcion.TLFinal}','{pRecepcion.TLEnjuague}','{pRecepcion.TTLavado}','{pRecepcion.Color1}','{pRecepcion.Color2}','{pRecepcion.Titulacion}','{pRecepcion.RT1}','{pRecepcion.RT2}','{pRecepcion.Operador}','{pRecepcion.Analista}','a','a')",
-                        conexion);
-                    retorno = comando.ExecuteNonQuery();
-                    break;
-            }
+            var comando = new MySqlCommand($"UPDATE recepcion SET Circuito='{pRecepcion.Circuito}', Fecha='{pRecepcion.Fecha}', MInicial='{pRecepcion.MInicial}', MFinal='{pRecepcion.MFinal}', MEnjuague='{pRecepcion.MEnjuague}', TAInicial='{pRecepcion.TAInicial}', TAFinal='{pRecepcion.TAFinal}', TAEnjuague='{pRecepcion.TAEnjuague}', TTAnalisis='{pRecepcion.TTA}', TipoLavado='{pRecepcion.TipoLavado}', TLInicial='{pRecepcion.TLInicial}', TLFinal='{pRecepcion.TLFinal}', TLEnjuague='{pRecepcion.TLEnjuague}', TTLavado='{pRecepcion.TTLavado}', Color1='{pRecepcion.Color1}', Color2='{pRecepcion.Color2}', Titulacion='{pRecepcion.Titulacion}', RT1='{pRecepcion.RT1}', RT2='{pRecepcion.RT2}', Operador='{pRecepcion.Operador}', Analista='{pRecepcion.Analista}' WHERE IDLinea='{pRecepcion.IdLinea}'", conexion);
+            retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-
-       
-
         public static class RecepcionSelect
         {
             public static int IdLinea { get; set; }
