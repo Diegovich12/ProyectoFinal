@@ -142,11 +142,14 @@ namespace ProyectoNutrical.Models
             return retorno;
         }
 
-        public static List<ModelGrasas> Buscar(string pFecha)
+        /// <summary>
+        ///     metodo  para buscar aun no funciona
+        /// </summary>
+        public static List<ModelGrasas> Buscar(string pCircuito)
         {
             var lista = new List<ModelGrasas>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM grasas WHERE Fecha>'{pFecha}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM grasas WHERE Circuito='{pCircuito}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -261,12 +264,12 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
-        ///     metodo para eliminar
+        ///     metodo para eliminar 
         /// </summary>
         public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"CALL eliminar_Grasas('{IdLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM grasas WHERE IDLinea = '{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;

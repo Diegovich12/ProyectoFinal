@@ -141,11 +141,14 @@ namespace ProyectoNutrical.Models
             return retorno;
         }
 
-        public static List<ModelSecadorHorizontal> Buscar(string pFecha)
+        /// <summary>
+        ///     metodo para buscar 
+        /// </summary>
+        public static List<ModelSecadorHorizontal> Buscar(string pCircuito)
         {
             var lista = new List<ModelSecadorHorizontal>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM secadorhorizontal WHERE Fecha>'{pFecha}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM secadorhorizontal WHERE Circuito='{pCircuito}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -259,12 +262,12 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
-        ///     metodo para eliminar
+        ///     metodo para eliminar 
         /// </summary>
         public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"CALL eliminar_SecadorH('{IdLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM secadorhorizontal WHERE IDLinea = '{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;

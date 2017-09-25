@@ -117,10 +117,10 @@ namespace ProyectoNutrical.Models
         /// <summary>
         ///     metodo para eliminar 
         /// </summary>
-        public static int Eliminar(int IDLinea)
+        public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"DELETE FROM recepcion WHERE IDLinea = ('{IDLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM recepcion WHERE IDLinea = '{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
@@ -128,11 +128,11 @@ namespace ProyectoNutrical.Models
         /// <summary>
         ///     metodo  para buscar aun no funciona
         /// </summary>
-        public static List<ModelRecepcion> Buscar(string pFecha)
+        public static List<ModelRecepcion> Buscar(string pCircuito)
         {
             var lista = new List<ModelRecepcion>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM recepcion WHERE Fecha>'{pFecha}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM recepcion WHERE Circuito='{pCircuito}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -165,10 +165,10 @@ namespace ProyectoNutrical.Models
             }
             return lista;
         }
-        /// <summary>
-        /// metodo para exportar funciona todo
-        /// </summary>
-        public static int Exportar(ModelRecepcion pRecepcion, int pOperacion)
+            /// <summary>
+            /// metodo para exportar funciona todo
+            /// </summary>
+            public static int Exportar(ModelRecepcion pRecepcion, int pOperacion)
         {
             var retorno = 0;
             var conexion = ConexionMySql.ObtenerConexion();
@@ -240,7 +240,8 @@ namespace ProyectoNutrical.Models
         {
             var retorno = 0;
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"UPDATE recepcion SET Circuito='{pRecepcion.Circuito}', Fecha='{pRecepcion.Fecha}', MInicial='{pRecepcion.MInicial}', MFinal='{pRecepcion.MFinal}', MEnjuague='{pRecepcion.MEnjuague}', TAInicial='{pRecepcion.TAInicial}', TAFinal='{pRecepcion.TAFinal}', TAEnjuague='{pRecepcion.TAEnjuague}', TTAnalisis='{pRecepcion.TTA}', TipoLavado='{pRecepcion.TipoLavado}', TLInicial='{pRecepcion.TLInicial}', TLFinal='{pRecepcion.TLFinal}', TLEnjuague='{pRecepcion.TLEnjuague}', TTLavado='{pRecepcion.TTLavado}', Color1='{pRecepcion.Color1}', Color2='{pRecepcion.Color2}', Titulacion='{pRecepcion.Titulacion}', RT1='{pRecepcion.RT1}', RT2='{pRecepcion.RT2}', Operador='{pRecepcion.Operador}', Analista='{pRecepcion.Analista}' WHERE IDLinea='{pRecepcion.IdLinea}'", conexion);
+            var comando = new MySqlCommand(string.Format("UPDATE recepcion SET Circuito='{1}', Fecha='{2}', MInicial='{3}', MFinal='{4}', MEnjuague='{5}', TAInicial='{6}', TAFinal='{7}', TAEnjuague='{8}', TTA='{9}', TipoLavado='{10}', TLInicial='{11}', TLFinal='{12}', TLEnjuague='{13}', TTLavado='{14}', Color1='{15}', Color2='{16}', Titulacion='{17}', RT1='{18}', RT2='{19}', Operador='{20}', Analista='{21}'  WHERE IdLinea={0}",
+              pRecepcion.Circuito, pRecepcion.Fecha, pRecepcion.MInicial, pRecepcion.MFinal, pRecepcion.MEnjuague, pRecepcion.TAInicial, pRecepcion.TAFinal, pRecepcion.TAEnjuague, pRecepcion.TTA, pRecepcion.TipoLavado, pRecepcion.TLInicial, pRecepcion.TLFinal, pRecepcion.TLEnjuague, pRecepcion.TTLavado, pRecepcion.Color1, pRecepcion.Color2, pRecepcion.Titulacion, pRecepcion.RT1, pRecepcion.RT2, pRecepcion.Operador, pRecepcion.Analista, pRecepcion.IdLinea), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }

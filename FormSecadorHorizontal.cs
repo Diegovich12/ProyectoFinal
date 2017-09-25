@@ -130,8 +130,6 @@ namespace ProyectoNutrical
             {
                 MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-                MessageBox.Show(@"No Se Pudo Eliminar El Registro", @"Registro No Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -142,7 +140,40 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgHorizontal.DataSource = ModelSecadorHorizontal.Buscar(dtpHorizontal.Value.Year + "-" + dtpHorizontal.Value.Month + "-" + dtpHorizontal.Value.Day);
+            var encontro = true;
+            foreach (var item in ModelSecadorHorizontal.Buscar(cmbCircuito.SelectedItem.ToString()))
+            {
+                if (encontro)
+                {
+                    dtgHorizontal.Rows.Clear();
+                    dtgHorizontal.Refresh();
+                }
+                var row = (DataGridViewRow)dtgHorizontal.Rows[0].Clone();
+                row.Cells[0].Value = item.IdLinea;
+                row.Cells[1].Value = item.Circuito;
+                row.Cells[2].Value = item.Fecha;
+                row.Cells[3].Value = item.MInicial;
+                row.Cells[4].Value = item.MFinal;
+                row.Cells[5].Value = item.MEnjuague;
+                row.Cells[6].Value = item.TAInicial;
+                row.Cells[7].Value = item.TAFinal;
+                row.Cells[8].Value = item.TAEnjuague;
+                row.Cells[9].Value = item.TTA;
+                row.Cells[10].Value = item.TipoLavado;
+                row.Cells[11].Value = item.TLInicial;
+                row.Cells[12].Value = item.TLFinal;
+                row.Cells[13].Value = item.TLEnjuague;
+                row.Cells[14].Value = item.TTLavado;
+                row.Cells[15].Value = item.Color1;
+                row.Cells[16].Value = item.Color2;
+                row.Cells[17].Value = item.Titulacion;
+                row.Cells[18].Value = item.RT1;
+                row.Cells[19].Value = item.RT2;
+                row.Cells[20].Value = item.Operador;
+                row.Cells[21].Value = item.Analista;
+                dtgHorizontal.Rows.Add(row);
+                encontro = false;
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)

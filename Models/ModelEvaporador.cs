@@ -139,11 +139,14 @@ namespace ProyectoNutrical.Models
             return retorno;
         }
 
-        public static List<ModelEvaporador> Buscar(string pFecha)
+        /// <summary>
+        ///     metodo para buscar 
+        /// </summary>
+        public static List<ModelEvaporador> Buscar(string pCircuito)
         {
             var lista = new List<ModelEvaporador>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM evaporador WHERE Fecha>'{pFecha}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM evaporador WHERE Circuito='{pCircuito}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -176,7 +179,6 @@ namespace ProyectoNutrical.Models
             }
             return lista;
         }
-
         public static ModelEvaporador ObtenerEvaporador(int IdLinea)
         {
             var pMe = new ModelEvaporador();
@@ -253,12 +255,12 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
-        ///     metodo para eliminar
+        ///     metodo para eliminar 
         /// </summary>
         public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"CALL eliminar_Evaporador('{IdLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM evaporador WHERE IDLinea = '{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;

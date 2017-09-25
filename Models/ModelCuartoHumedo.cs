@@ -141,11 +141,14 @@ namespace ProyectoNutrical.Models
             return retorno;
         }
 
-        public static List<ModelCuartoHumedo> Buscar(string pFecha)
+        /// <summary>
+        ///     metodo  para buscar 
+        /// </summary>
+        public static List<ModelCuartoHumedo> Buscar(string pCircuito)
         {
             var lista = new List<ModelCuartoHumedo>();
             var connec = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"SELECT * FROM cuartohumedo WHERE Fecha>'{pFecha}'", connec);
+            var comando = new MySqlCommand($"SELECT * FROM cuartohumedo WHERE Circuito='{pCircuito}'", connec);
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -259,17 +262,16 @@ namespace ProyectoNutrical.Models
         }
 
         /// <summary>
-        ///     metodo para eliminar
+        ///     metodo para eliminar 
         /// </summary>
         public static int Eliminar(int IdLinea)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"CALL eliminar_CuartoHumedo('{IdLinea}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM cuartohumedo WHERE IDLinea = '{IdLinea}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
         }
-
         public static class CuartoHumedoSelect
         {
             public static int IdLinea { get; set; }
