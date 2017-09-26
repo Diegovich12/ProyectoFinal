@@ -1,18 +1,32 @@
 ﻿using System;
 using ProyectoNutrical.Models;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace ProyectoNutrical
 {
     public partial class FormCuartoHumedo : Form
     {
-        public FormCuartoHumedo()
-        {
-            InitializeComponent();
-            LlenarGridView();
-            LlenarCombopuestos();
-        }
-        private void LlenarGridView()
+            public FormCuartoHumedo()
+            {
+                InitializeComponent();
+                LlenarCombopuestos();
+                LlenarGridView();
+                InitializeTimePicker();
+            }
+            private DateTimePicker timePicker;
+
+            private void InitializeTimePicker()
+            {
+                timePicker = new DateTimePicker();
+                timePicker.Format = DateTimePickerFormat.Time;
+                timePicker.ShowUpDown = true;
+                timePicker.Location = new Point(120, 100);
+                timePicker.Width = 100;
+                Controls.Add(timePicker);
+            }
+            [STAThread]
+            private void LlenarGridView()
         {
             foreach (var item in ModelCuartoHumedo.LlenarGridView())
             {

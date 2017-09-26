@@ -117,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 26);
+            this.label1.Location = new System.Drawing.Point(3, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 0;
@@ -126,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 82);
+            this.label2.Location = new System.Drawing.Point(39, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
@@ -319,15 +319,17 @@
             this.cmbCircuito.FormattingEnabled = true;
             this.cmbCircuito.Items.AddRange(new object[] {
             "TQ BAL"});
-            this.cmbCircuito.Location = new System.Drawing.Point(125, 23);
+            this.cmbCircuito.Location = new System.Drawing.Point(89, 23);
             this.cmbCircuito.Name = "cmbCircuito";
             this.cmbCircuito.Size = new System.Drawing.Size(121, 21);
             this.cmbCircuito.TabIndex = 32;
             // 
             // dtpSecadorVertical
             // 
-            this.dtpSecadorVertical.Location = new System.Drawing.Point(125, 76);
+            this.dtpSecadorVertical.CustomFormat = "timePicker.Format = DateTimePickerFormat.Time;";
+            this.dtpSecadorVertical.Location = new System.Drawing.Point(85, 60);
             this.dtpSecadorVertical.Name = "dtpSecadorVertical";
+            this.dtpSecadorVertical.ShowUpDown = true;
             this.dtpSecadorVertical.Size = new System.Drawing.Size(200, 20);
             this.dtpSecadorVertical.TabIndex = 33;
             // 

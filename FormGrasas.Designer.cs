@@ -171,8 +171,10 @@
             // 
             // dtpGrasas
             // 
+            this.dtpGrasas.CustomFormat = "timePicker.Format = DateTimePickerFormat.Time;";
             this.dtpGrasas.Location = new System.Drawing.Point(142, 71);
             this.dtpGrasas.Name = "dtpGrasas";
+            this.dtpGrasas.ShowUpDown = true;
             this.dtpGrasas.Size = new System.Drawing.Size(200, 20);
             this.dtpGrasas.TabIndex = 76;
             // 

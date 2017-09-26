@@ -28,6 +28,8 @@ namespace ProyectoNutrical
             Controls.Add(timePicker);
         }
         [STAThread]
+
+
         private void LlenarGridView()
         {         
             foreach (var item in ModelRecepcion.LlenarGridView())
@@ -80,14 +82,14 @@ namespace ProyectoNutrical
                 MInicial = txtMInicial.Text.Trim(),
                 MFinal = txtMFinal.Text.Trim(),
                 MEnjuague = txtMEnjuague.Text.Trim(),
-                TAInicial = txtTAInicial.Text.Trim(), //este
+                TAInicial = txtTAInicial.Text.Trim(),
                 TAFinal = txtTAFinal.Text.Trim(),
-                TAEnjuague = txtTAEnjuague.Text.Trim(), // este
+                TAEnjuague = txtTAEnjuague.Text.Trim(), 
                 TTA = lblTTA.Text.Trim(),
                 TipoLavado = cmbLavado.SelectedItem.ToString(),
-                TLInicial = txtTLInicial.Text.Trim(), //este
+                TLInicial = txtTLInicial.Text.Trim(), 
                 TLFinal = txtTLFinal.Text.Trim(), 
-                TLEnjuague = txtTLEnjuague.Text.Trim(), //este
+                TLEnjuague = txtTLEnjuague.Text.Trim(), 
                 TTLavado = lblTTL.Text.Trim(),
                 Color1 = cmbSolucion1.SelectedItem.ToString(),
                 Color2 = cmbSolucion2.SelectedItem.ToString(),

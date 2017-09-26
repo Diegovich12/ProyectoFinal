@@ -365,8 +365,10 @@
             // 
             // dtpCuartoHumedo
             // 
-            this.dtpCuartoHumedo.Location = new System.Drawing.Point(129, 83);
+            this.dtpCuartoHumedo.CustomFormat = "timePicker.Format = DateTimePickerFormat.Time;";
+            this.dtpCuartoHumedo.Location = new System.Drawing.Point(101, 70);
             this.dtpCuartoHumedo.Name = "dtpCuartoHumedo";
+            this.dtpCuartoHumedo.ShowUpDown = true;
             this.dtpCuartoHumedo.Size = new System.Drawing.Size(164, 20);
             this.dtpCuartoHumedo.TabIndex = 32;
             // 
@@ -383,7 +385,7 @@
             "TQ P4 Y P5 CON EQUIPO LCA",
             "TQ P4 Y P5 PRECALENTADO",
             "LINEA DE C.H. A S.H."});
-            this.cmbCircuito.Location = new System.Drawing.Point(129, 32);
+            this.cmbCircuito.Location = new System.Drawing.Point(110, 32);
             this.cmbCircuito.Name = "cmbCircuito";
             this.cmbCircuito.Size = new System.Drawing.Size(121, 21);
             this.cmbCircuito.TabIndex = 31;
@@ -391,7 +393,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 89);
+            this.label2.Location = new System.Drawing.Point(40, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 30;
@@ -400,7 +402,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 35);
+            this.label1.Location = new System.Drawing.Point(21, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 29;

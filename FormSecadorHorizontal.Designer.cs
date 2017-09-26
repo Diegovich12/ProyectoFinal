@@ -171,8 +171,10 @@
             // 
             // dtpHorizontal
             // 
+            this.dtpHorizontal.CustomFormat = "timePicker.Format = DateTimePickerFormat.Time;";
             this.dtpHorizontal.Location = new System.Drawing.Point(142, 80);
             this.dtpHorizontal.Name = "dtpHorizontal";
+            this.dtpHorizontal.ShowUpDown = true;
             this.dtpHorizontal.Size = new System.Drawing.Size(200, 20);
             this.dtpHorizontal.TabIndex = 55;
             // 
