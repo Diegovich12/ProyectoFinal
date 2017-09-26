@@ -247,8 +247,10 @@
             // 
             // dtpRecepcion
             // 
-            this.dtpRecepcion.Location = new System.Drawing.Point(114, 70);
+            this.dtpRecepcion.CustomFormat = "timePicker.Format = DateTimePickerFormat.Time;";
+            this.dtpRecepcion.Location = new System.Drawing.Point(105, 71);
             this.dtpRecepcion.Name = "dtpRecepcion";
+            this.dtpRecepcion.ShowUpDown = true;
             this.dtpRecepcion.Size = new System.Drawing.Size(164, 20);
             this.dtpRecepcion.TabIndex = 12;
             // 

@@ -1,18 +1,33 @@
 ﻿using System;
 using System.Windows.Forms;
 using ProyectoNutrical.Models;
+using System.Drawing;
 
 namespace ProyectoNutrical
 {
     public partial class FormRecepcion : Form
     {
+
+        
         public FormRecepcion()
         {
             InitializeComponent();
             LlenarCombopuestos();
             LlenarGridView();
+            InitializeTimePicker();
         }
-       
+        private DateTimePicker timePicker;
+
+        private void InitializeTimePicker()
+        {
+            timePicker = new DateTimePicker();
+            timePicker.Format = DateTimePickerFormat.Time;
+            timePicker.ShowUpDown = true;
+            timePicker.Location = new Point(120, 100);
+            timePicker.Width = 100;
+            Controls.Add(timePicker);
+        }
+        [STAThread]
         private void LlenarGridView()
         {         
             foreach (var item in ModelRecepcion.LlenarGridView())
@@ -65,14 +80,14 @@ namespace ProyectoNutrical
                 MInicial = txtMInicial.Text.Trim(),
                 MFinal = txtMFinal.Text.Trim(),
                 MEnjuague = txtMEnjuague.Text.Trim(),
-                TAInicial = txtTAInicial.Text.Trim(),
+                TAInicial = txtTAInicial.Text.Trim(), //este
                 TAFinal = txtTAFinal.Text.Trim(),
-                TAEnjuague = txtTAEnjuague.Text.Trim(),
+                TAEnjuague = txtTAEnjuague.Text.Trim(), // este
                 TTA = lblTTA.Text.Trim(),
                 TipoLavado = cmbLavado.SelectedItem.ToString(),
-                TLInicial = txtTLInicial.Text.Trim(), 
+                TLInicial = txtTLInicial.Text.Trim(), //este
                 TLFinal = txtTLFinal.Text.Trim(), 
-                TLEnjuague = txtTLEnjuague.Text.Trim(), //edte
+                TLEnjuague = txtTLEnjuague.Text.Trim(), //este
                 TTLavado = lblTTL.Text.Trim(),
                 Color1 = cmbSolucion1.SelectedItem.ToString(),
                 Color2 = cmbSolucion2.SelectedItem.ToString(),

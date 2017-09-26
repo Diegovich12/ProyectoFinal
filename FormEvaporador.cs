@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ProyectoNutrical.Models;
+using System.Drawing;
 
 namespace ProyectoNutrical
 {
@@ -11,8 +12,21 @@ namespace ProyectoNutrical
             InitializeComponent();
             LlenarCombopuestos();
             LlenarGridView();
+            InitializeTimePicker();
         }
-        
+        private DateTimePicker timePicker;
+
+        private void InitializeTimePicker()
+        {
+            timePicker = new DateTimePicker();
+            timePicker.Format = DateTimePickerFormat.Time;
+            timePicker.ShowUpDown = true;
+            timePicker.Location = new Point(120, 100);
+            timePicker.Width = 100;
+            Controls.Add(timePicker);
+        }
+        [STAThread]
+
         private void LlenarGridView()
         {
             foreach (var item in ModelEvaporador.LlenarGridView())
