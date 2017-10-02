@@ -8,10 +8,13 @@ namespace ProyectoNutrical
     {
         public FormSecadorVertical()
         {
-                InitializeComponent();
-                LlenarCombopuestos();
-                LlenarGridView();
+            InitializeComponent();
+            LlenarCombopuestos();
+            LlenarGridView();
+
+            cmbCircuito.SelectedIndex = 0;
         }
+
         private void LlenarGridView()
         {
             foreach (var item in ModelSecadorVertical.Llenargrid())
@@ -88,32 +91,35 @@ namespace ProyectoNutrical
 
         private void toolStripBtnActualizar_Click(object sender, EventArgs e)
         {
-            ModelSecadorVertical pSV = new ModelSecadorVertical();
-            pSV.IdLinea = ModelSecadorVertical.SVerticalSelect.IdLinea;
-            pSV.Circuito = cmbCircuito.SelectedItem.ToString();
-            pSV.Fecha = dtpSecadorVertical.Text.Trim();
-            pSV.MInicial = txtMInicial.Text.Trim();
-            pSV.MFinal = txtMFinal.Text.Trim();
-            pSV.MEnjuague = txtMEnjuague.Text.Trim();
-            pSV.TAInicial = txtTAInicial.Text.Trim();
-            pSV.TAFinal = txtTAFinal.Text.Trim();
-            pSV.TAEnjuague = txtTAEnjuague.Text.Trim();
-            pSV.TTA = lblTTA.Text.Trim();
-            pSV.TipoLavado = cmbLavado.SelectedItem.ToString();
-            pSV.TLInicial = txtTLInicial.Text.Trim();
-            pSV.TLFinal = txtTLFinal.Text.Trim();
-            pSV.TLEnjuague = txtTLEnjuague.Text.Trim();
-            pSV.TTLavado = lblTTL.Text.Trim();
-            pSV.Color1 = cmbSolucion.SelectedItem.ToString();
-            pSV.Color2 = cmbSolucion2.SelectedItem.ToString();
-            pSV.Titulacion = cmbTitulacion.SelectedItem.ToString();
-            pSV.RT1 = txtRT1.Text.Trim();
-            pSV.RT2 = txtRT2.Text.Trim();
-            pSV.Operador = cmbOperador.SelectedItem.ToString();
-            pSV.Analista = cmbAnalista.SelectedItem.ToString();
+            ModelSecadorVertical pSV = new ModelSecadorVertical
+            {
+                IdLinea = ModelSecadorVertical.SVerticalSelect.IdLinea,
+                Circuito = cmbCircuito.SelectedItem.ToString(),
+                Fecha = dtpSecadorVertical.Value.Year + "/" + dtpSecadorVertical.Value.Month + "/" + dtpSecadorVertical.Value.Day +
+                "/" + dtpSecadorVertical.Value.Hour + "/" + dtpSecadorVertical.Value.Minute + "/" + dtpSecadorVertical.Value.Second,
+                MInicial = txtMInicial.Text.Trim(),
+                MFinal = txtMFinal.Text.Trim(),
+                MEnjuague = txtMEnjuague.Text.Trim(),
+                TAInicial = txtTAInicial.Text.Trim(),
+                TAFinal = txtTAFinal.Text.Trim(),
+                TAEnjuague = txtTAEnjuague.Text.Trim(),
+                TTA = lblTTA.Text.Trim(),
+                TipoLavado = cmbLavado.SelectedItem.ToString(),
+                TLInicial = txtTLInicial.Text.Trim(),
+                TLFinal = txtTLFinal.Text.Trim(),
+                TLEnjuague = txtTLEnjuague.Text.Trim(),
+                TTLavado = lblTTL.Text.Trim(),
+                Color1 = cmbSolucion.SelectedItem.ToString(),
+                Color2 = cmbSolucion2.SelectedItem.ToString(),
+                Titulacion = cmbTitulacion.SelectedItem.ToString(),
+                RT1 = txtRT1.Text.Trim(),
+                RT2 = txtRT2.Text.Trim(),
+                Operador = cmbOperador.SelectedItem.ToString(),
+                Analista = cmbAnalista.SelectedItem.ToString()
+            };
 
-         
-               if (ModelSecadorVertical.Actualizar(pSV) > 0)
+
+            if (ModelSecadorVertical.Actualizar(pSV) > 0)
             {
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

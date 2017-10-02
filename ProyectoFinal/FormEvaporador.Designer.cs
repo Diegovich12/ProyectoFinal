@@ -406,7 +406,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgEvaporador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgEvaporador.Size = new System.Drawing.Size(1167, 187);
+            this.dtgEvaporador.Size = new System.Drawing.Size(1821, 389);
             this.dtgEvaporador.TabIndex = 25;
             this.dtgEvaporador.DoubleClick += new System.EventHandler(this.dtgEvaporador_DoubleClick);
             // 
@@ -613,9 +613,9 @@
             this.toolStripBtnEliminar,
             this.toolStripBtnBuscar,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(1180, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(1834, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(64, 661);
+            this.toolStrip1.Size = new System.Drawing.Size(64, 863);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -812,7 +812,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1244, 661);
+            this.ClientSize = new System.Drawing.Size(1898, 863);
             this.Controls.Add(this.cmbSolucion2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.toolStrip1);

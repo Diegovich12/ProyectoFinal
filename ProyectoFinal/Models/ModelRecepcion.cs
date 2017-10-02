@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using OfficeOpenXml;
-using System.IO;
+using System;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace ProyectoNutrical.Models
 {

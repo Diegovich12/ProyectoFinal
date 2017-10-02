@@ -8,9 +8,7 @@ namespace ProyectoNutrical.Models
 {
     public class ModelEvaporador
     {
-        public ModelEvaporador()
-        {
-        }
+        public ModelEvaporador() { }
 
         public ModelEvaporador(int pIdLinea, string pCircuito, string pFecha, string pMInicial,
             string pMFinal, string pMEnjuague, string pTAInicial,

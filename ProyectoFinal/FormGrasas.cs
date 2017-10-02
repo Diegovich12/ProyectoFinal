@@ -1,5 +1,5 @@
-﻿using System;
-using ProyectoNutrical.Models;
+﻿using ProyectoNutrical.Models;
+using System;
 using System.Windows.Forms;
 
 namespace ProyectoNutrical
@@ -88,29 +88,32 @@ namespace ProyectoNutrical
 
         private void toolStripBtnActualizar_Click(object sender, EventArgs e)
         {
-            ModelGrasas pGR = new ModelGrasas();
-            pGR.IdLinea = ModelGrasas.GrasasSelect.IdLinea;
-            pGR.Circuito = cmbCircuito.SelectedItem.ToString();
-            pGR.Fecha = dtpGrasas.Text.Trim();
-            pGR.MInicial = txtMInicial.Text.Trim();
-            pGR.MFinal = txtMFinal.Text.Trim();
-            pGR.MEnjuague = txtMEnjuague.Text.Trim();
-            pGR.TAInicial = txtTAInicial.Text.Trim();
-            pGR.TAFinal = txtTAFinal.Text.Trim();
-            pGR.TAEnjuague = txtTAEnjuague.Text.Trim();
-            pGR.TTA = lblTTA.Text.Trim();
-            pGR.TipoLavado = cmbLavado.SelectedItem.ToString();
-            pGR.TLInicial = txtTLInicial.Text.Trim();
-            pGR.TLFinal = txtTLFinal.Text.Trim();
-            pGR.TLEnjuague = txtTLEnjuague.Text.Trim();
-            pGR.TTLavado = lblTTL.Text.Trim();
-            pGR.Color1 = cmbSolucion.SelectedItem.ToString();
-            pGR.Color2 = cmbSolucion2.SelectedItem.ToString();
-            pGR.Titulacion = cmbTitulacion.SelectedItem.ToString();
-            pGR.RT1 = txtRT1.Text.Trim();
-            pGR.RT2 = txtRT2.Text.Trim();
-            pGR.Operador = cmbOperador.SelectedItem.ToString();
-            pGR.Analista = cmbAnalista.SelectedItem.ToString();
+            ModelGrasas pGR = new ModelGrasas
+            {
+                IdLinea = ModelGrasas.GrasasSelect.IdLinea,
+                Circuito = cmbCircuito.SelectedItem.ToString(),
+                Fecha = dtpGrasas.Value.Year + "/" + dtpGrasas.Value.Month + "/" + dtpGrasas.Value.Day +
+                "/" + dtpGrasas.Value.Hour + "/" + dtpGrasas.Value.Minute + "/" + dtpGrasas.Value.Second,
+                MInicial = txtMInicial.Text.Trim(),
+                MFinal = txtMFinal.Text.Trim(),
+                MEnjuague = txtMEnjuague.Text.Trim(),
+                TAInicial = txtTAInicial.Text.Trim(),
+                TAFinal = txtTAFinal.Text.Trim(),
+                TAEnjuague = txtTAEnjuague.Text.Trim(),
+                TTA = lblTTA.Text.Trim(),
+                TipoLavado = cmbLavado.SelectedItem.ToString(),
+                TLInicial = txtTLInicial.Text.Trim(),
+                TLFinal = txtTLFinal.Text.Trim(),
+                TLEnjuague = txtTLEnjuague.Text.Trim(),
+                TTLavado = lblTTL.Text.Trim(),
+                Color1 = cmbSolucion.SelectedItem.ToString(),
+                Color2 = cmbSolucion2.SelectedItem.ToString(),
+                Titulacion = cmbTitulacion.SelectedItem.ToString(),
+                RT1 = txtRT1.Text.Trim(),
+                RT2 = txtRT2.Text.Trim(),
+                Operador = cmbOperador.SelectedItem.ToString(),
+                Analista = cmbAnalista.SelectedItem.ToString()
+            };
 
             if (ModelGrasas.Actualizar(pGR) > 0)
             {

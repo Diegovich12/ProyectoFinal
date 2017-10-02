@@ -11,6 +11,7 @@ namespace ProyectoNutrical
             InitializeComponent();
             LlenarCombopuestos();
             LlenarGridView();
+            cmbCircuito.SelectedIndex = 0;
         }
         private void LlenarGridView()
         {
@@ -88,30 +89,33 @@ namespace ProyectoNutrical
 
         private void toolStripBtnActualizar_Click(object sender, EventArgs e)
         {
-            
-            ModelSecadorHorizontal pSH = new ModelSecadorHorizontal();
-            pSH.IdLinea = ModelSecadorHorizontal.SHorizontalSelect.IdLinea;
-            pSH.Circuito = cmbCircuito.SelectedItem.ToString();
-            pSH.Fecha = dtpHorizontal.Text.Trim();
-            pSH.MInicial = txtMInicial.Text.Trim();
-            pSH.MFinal = txtMFinal.Text.Trim();
-            pSH.MEnjuague = txtMEnjuague.Text.Trim();
-            pSH.TAInicial = txtTAInicial.Text.Trim();
-            pSH.TAFinal = txtTAFinal.Text.Trim();
-            pSH.TAEnjuague = txtTAEnjuague.Text.Trim();
-            pSH.TTA = lblTTA.Text.Trim();
-            pSH.TipoLavado = cmbLavado.SelectedItem.ToString();
-            pSH.TLInicial = txtTLInicial.Text.Trim();
-            pSH.TLFinal = txtTLFinal.Text.Trim();
-            pSH.TLEnjuague = txtTLEnjuague.Text.Trim();
-            pSH.TTLavado = lblTTL.Text.Trim();
-            pSH.Color1 = cmbSolucion.SelectedItem.ToString();
-            pSH.Color2 = cmbSolucion2.SelectedItem.ToString();
-            pSH.Titulacion = cmbTitulacion.SelectedItem.ToString();
-            pSH.RT1 = txtRT1.Text.Trim();
-            pSH.RT2 = txtRT2.Text.Trim();
-            pSH.Operador = cmbOperador.SelectedItem.ToString();
-            pSH.Analista = cmbAnalista.SelectedItem.ToString();
+
+            ModelSecadorHorizontal pSH = new ModelSecadorHorizontal
+            {
+                IdLinea = ModelSecadorHorizontal.SHorizontalSelect.IdLinea,
+                Circuito = cmbCircuito.SelectedItem.ToString(),
+                Fecha = dtpHorizontal.Value.Year + "/" + dtpHorizontal.Value.Month + "/" + dtpHorizontal.Value.Day +
+                "/" + dtpHorizontal.Value.Hour + "/" + dtpHorizontal.Value.Minute + "/" + dtpHorizontal.Value.Second,
+                MInicial = txtMInicial.Text.Trim(),
+                MFinal = txtMFinal.Text.Trim(),
+                MEnjuague = txtMEnjuague.Text.Trim(),
+                TAInicial = txtTAInicial.Text.Trim(),
+                TAFinal = txtTAFinal.Text.Trim(),
+                TAEnjuague = txtTAEnjuague.Text.Trim(),
+                TTA = lblTTA.Text.Trim(),
+                TipoLavado = cmbLavado.SelectedItem.ToString(),
+                TLInicial = txtTLInicial.Text.Trim(),
+                TLFinal = txtTLFinal.Text.Trim(),
+                TLEnjuague = txtTLEnjuague.Text.Trim(),
+                TTLavado = lblTTL.Text.Trim(),
+                Color1 = cmbSolucion.SelectedItem.ToString(),
+                Color2 = cmbSolucion2.SelectedItem.ToString(),
+                Titulacion = cmbTitulacion.SelectedItem.ToString(),
+                RT1 = txtRT1.Text.Trim(),
+                RT2 = txtRT2.Text.Trim(),
+                Operador = cmbOperador.SelectedItem.ToString(),
+                Analista = cmbAnalista.SelectedItem.ToString()
+            };
 
             if (ModelSecadorHorizontal.Actualizar(pSH) > 0)
             {

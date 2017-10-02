@@ -11,6 +11,8 @@ namespace ProyectoNutrical
             InitializeComponent();
             LlenarGridView();
             LlenarCombopuestos();
+
+            cmbCircuito.SelectedIndex = 0;
         }
         private void LlenarGridView()
         {
@@ -111,34 +113,37 @@ namespace ProyectoNutrical
             else
                 MessageBox.Show(@"No Se Pudo Guardar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-         }
+        }
 
         private void toolStripBtnActualizar_Click(object sender, EventArgs e)
         {
 
-            ModelCuartoHumedo pCH = new ModelCuartoHumedo();
-            pCH.IdLinea = ModelCuartoHumedo.CuartoHumedoSelect.IdLinea;
-            pCH.Circuito = cmbCircuito.SelectedItem.ToString();
-            pCH.Fecha = dtpCuartoHumedo.Text.Trim();
-            pCH.MInicial = txtMInicial.Text.Trim();
-            pCH.MFinal = txtMFinal.Text.Trim();
-            pCH.MEnjuague = txtMEnjuague.Text.Trim();
-            pCH.TAInicial = txtTAInicial.Text.Trim();
-            pCH.TAFinal = txtTAFinal.Text.Trim();
-            pCH.TAEnjuague = txtTAEnjuague.Text.Trim();
-            pCH.TTA = lblTTA.Text.Trim();
-            pCH.TipoLavado = cmbLavado.SelectedItem.ToString();
-            pCH.TLInicial = txtTLInicial.Text.Trim();
-            pCH.TLFinal = txtTLFinal.Text.Trim();
-            pCH.TLEnjuague = txtTLEnjuague.Text.Trim();
-            pCH.TTLavado = lblTTL.Text.Trim();
-            pCH.Color1 = cmbSolucion1.SelectedItem.ToString();
-            pCH.Color2 = cmbSolucion2.SelectedItem.ToString();
-            pCH.Titulacion = cmbTitulacion.SelectedItem.ToString();
-            pCH.RT1 = txtRT1.Text.Trim();
-            pCH.RT2 = txtRT2.Text.Trim();
-            pCH.Operador = cmbOperador.SelectedItem.ToString();
-            pCH.Analista = cmbAnalista.SelectedItem.ToString();
+            ModelCuartoHumedo pCH = new ModelCuartoHumedo
+            {
+                IdLinea = ModelCuartoHumedo.CuartoHumedoSelect.IdLinea,
+                Circuito = cmbCircuito.SelectedItem.ToString(),
+                Fecha = dtpCuartoHumedo.Value.Year + "/" + dtpCuartoHumedo.Value.Month + "/" + dtpCuartoHumedo.Value.Day + "/" +
+                      dtpCuartoHumedo.Value.Hour + "/" + dtpCuartoHumedo.Value.Minute + "/" + dtpCuartoHumedo.Value.Second,
+                MInicial = txtMInicial.Text.Trim(),
+                MFinal = txtMFinal.Text.Trim(),
+                MEnjuague = txtMEnjuague.Text.Trim(),
+                TAInicial = txtTAInicial.Text.Trim(),
+                TAFinal = txtTAFinal.Text.Trim(),
+                TAEnjuague = txtTAEnjuague.Text.Trim(),
+                TTA = lblTTA.Text.Trim(),
+                TipoLavado = cmbLavado.SelectedItem.ToString(),
+                TLInicial = txtTLInicial.Text.Trim(),
+                TLFinal = txtTLFinal.Text.Trim(),
+                TLEnjuague = txtTLEnjuague.Text.Trim(),
+                TTLavado = lblTTL.Text.Trim(),
+                Color1 = cmbSolucion1.SelectedItem.ToString(),
+                Color2 = cmbSolucion2.SelectedItem.ToString(),
+                Titulacion = cmbTitulacion.SelectedItem.ToString(),
+                RT1 = txtRT1.Text.Trim(),
+                RT2 = txtRT2.Text.Trim(),
+                Operador = cmbOperador.SelectedItem.ToString(),
+                Analista = cmbAnalista.SelectedItem.ToString()
+            };
 
             if (ModelCuartoHumedo.Actualizar(pCH) > 0)
             {
