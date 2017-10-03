@@ -64,7 +64,7 @@ namespace ProyectoNutrical
                     MessageBoxIcon.Information);
             else
                 MessageBox.Show(@"No se pudo guardar el cliente", @"Fallo!!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                    MessageBoxIcon.Exclamation);   
             }
 
         private void toolStripBtnEliminar_Click(object sender, EventArgs e)

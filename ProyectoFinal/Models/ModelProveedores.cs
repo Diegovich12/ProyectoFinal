@@ -145,6 +145,7 @@ namespace ProyectoNutrical.Models
                 ProveedorSelec.Matricula = reader.GetString(3);
                 ProveedorSelec.Rancho = reader.GetString(4);
                 ProveedorSelec.NoPipa = reader.GetString(5);
+
             }
             connec.Close();
             return pModelProveedores;
