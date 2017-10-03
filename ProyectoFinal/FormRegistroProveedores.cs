@@ -57,16 +57,14 @@ namespace ProyectoNutrical
                 Proveedor = txtProveedor.Text.Trim(),
                 Rancho = txtRancho.Text.Trim(),
                 NoPipa = txtNoPipa.Text.Trim(),
-              //  IdRancho = ModelProveedores.ProveedorSelec.IdRancho
             };
 
-          /* if (ModelProveedores.Actualizar(pTodo, 1) > 0)
+           if (ModelProveedores.Actualizar(pTodo) > 0)
                 MessageBox.Show(@"Cliente Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             else
                 MessageBox.Show(@"No se pudo guardar el cliente", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-                    */
             }
 
         private void toolStripBtnEliminar_Click(object sender, EventArgs e)

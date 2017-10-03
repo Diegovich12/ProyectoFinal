@@ -143,8 +143,8 @@ namespace ProyectoNutrical.Models
                 ProveedorSelec.Nombre = reader.GetString(1);
                 ProveedorSelec.Proveedor = reader.GetString(2);
                 ProveedorSelec.Matricula = reader.GetString(3);
-                ProveedorSelec.NoPipa = reader.GetString(4);
-                ProveedorSelec.Rancho = reader.GetString(5);
+                ProveedorSelec.Rancho = reader.GetString(4);
+                ProveedorSelec.NoPipa = reader.GetString(5);
             }
             connec.Close();
             return pModelProveedores;
@@ -154,7 +154,7 @@ namespace ProyectoNutrical.Models
         public static int Actualizar(ModelProveedores pModelProveedores)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand( $"UPDATE proveedores SET Nombre='{pModelProveedores.Nombre}', Proveedor='{pModelProveedores.Proveedor}', Matricula='{pModelProveedores.Matricula}', NoPipa='{pModelProveedores.NoPipa}', Rancho='{pModelProveedores.Rancho}' WHERE idproveedor='{pModelProveedores.IdProveedor}'",conexion);
+            var comando = new MySqlCommand( $"UPDATE proveedores SET  NombreProveedor = '{pModelProveedores.Nombre}', Proveedor = '{pModelProveedores.Proveedor}', Matricula = '{pModelProveedores.Matricula}', NoPipa='{pModelProveedores.NoPipa}', Rancho='{pModelProveedores.Rancho}' WHERE idproveedores='{pModelProveedores.IdProveedor}'",conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;

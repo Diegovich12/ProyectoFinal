@@ -35,6 +35,12 @@
             this.toolStripBtnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnBuscar = new System.Windows.Forms.ToolStripButton();
             this.dtgProveedores = new System.Windows.Forms.DataGridView();
+            this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rancho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoPipa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
@@ -45,12 +51,6 @@
             this.txtRancho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNoPipa = new System.Windows.Forms.TextBox();
-            this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rancho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoPipa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).BeginInit();
             this.SuspendLayout();
@@ -127,9 +127,40 @@
             this.NoPipa});
             this.dtgProveedores.Location = new System.Drawing.Point(12, 443);
             this.dtgProveedores.Name = "dtgProveedores";
-            this.dtgProveedores.Size = new System.Drawing.Size(543, 206);
+            this.dtgProveedores.Size = new System.Drawing.Size(912, 206);
             this.dtgProveedores.TabIndex = 13;
             this.dtgProveedores.DoubleClick += new System.EventHandler(this.dtgProveedores_DoubleClick);
+            // 
+            // id_proveedor
+            // 
+            this.id_proveedor.HeaderText = "id";
+            this.id_proveedor.Name = "id_proveedor";
+            this.id_proveedor.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            // 
+            // Matricula
+            // 
+            this.Matricula.HeaderText = "Matricula";
+            this.Matricula.Name = "Matricula";
+            // 
+            // Rancho
+            // 
+            this.Rancho.HeaderText = "Rancho";
+            this.Rancho.Name = "Rancho";
+            // 
+            // NoPipa
+            // 
+            this.NoPipa.HeaderText = "No Pipa";
+            this.NoPipa.Name = "NoPipa";
             // 
             // label1
             // 
@@ -210,37 +241,6 @@
             this.txtNoPipa.Name = "txtNoPipa";
             this.txtNoPipa.Size = new System.Drawing.Size(210, 20);
             this.txtNoPipa.TabIndex = 25;
-            // 
-            // id_proveedor
-            // 
-            this.id_proveedor.HeaderText = "id";
-            this.id_proveedor.Name = "id_proveedor";
-            this.id_proveedor.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            // 
-            // Matricula
-            // 
-            this.Matricula.HeaderText = "Matricula";
-            this.Matricula.Name = "Matricula";
-            // 
-            // Rancho
-            // 
-            this.Rancho.HeaderText = "Rancho";
-            this.Rancho.Name = "Rancho";
-            // 
-            // NoPipa
-            // 
-            this.NoPipa.HeaderText = "No Pipa";
-            this.NoPipa.Name = "NoPipa";
             // 
             // FormRegistroProveedores
             // 

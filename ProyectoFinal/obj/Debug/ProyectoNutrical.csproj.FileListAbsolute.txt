@@ -368,3 +368,4 @@ C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\Pr
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.exe
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.pdb
+C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
