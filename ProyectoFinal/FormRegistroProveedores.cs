@@ -69,11 +69,9 @@ namespace ProyectoNutrical
 
         private void toolStripBtnEliminar_Click(object sender, EventArgs e)
         {
-            /*
             if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Proveedor", @"Estas Seguro??",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            if (ModelProveedores.Eliminar(ModelProveedores.ProveedorSelec.IdProveedor,
-                    ModelProveedores.ProveedorSelec.IdRancho) > 0)
+            if (ModelProveedores.Eliminar(ModelProveedores.ProveedorSelec.IdProveedor) > 0)
             {
                 MessageBox.Show(@"Proveedor Eliminado Correctamente!", @"Proveedor Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -85,7 +83,6 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Se Cancelo La Eliminacion", @"Eliminacion Cancelada", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
-            */
         }
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)

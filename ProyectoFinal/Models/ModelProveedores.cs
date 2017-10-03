@@ -165,7 +165,7 @@ namespace ProyectoNutrical.Models
         public static int Eliminar(int pidProveedor)
         {
             var conexion = ConexionMySql.ObtenerConexion();
-            var comando = new MySqlCommand($"DELETE FROM proveedores WHERE idproveedor='{pidProveedor}'", conexion);
+            var comando = new MySqlCommand($"DELETE FROM proveedores WHERE idproveedores='{pidProveedor}'", conexion);
             var retorno = comando.ExecuteNonQuery();
             conexion.Close();
             return retorno;
