@@ -1,5 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ProyectoNutrical.Models
 {
@@ -179,6 +182,51 @@ namespace ProyectoNutrical.Models
             public static string NoPipa { get; set; }
             public static string Proveedor { get; set; }
             public static string Rancho { get; set; }
+        }
+
+
+        public static void DisplayInExcell()
+        {
+            var datename = "Proveedores" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\Users\\Diego Maciel Acevedo\\Desktop\\ExcelCompra\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si exste lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("proveedores");
+
+            spreadSheet.Cells["A1"].Value = "idproveedores";
+            spreadSheet.Cells["B1"].Value = "NombreProveedor";
+            spreadSheet.Cells["C1"].Value = "Proveedor";
+            spreadSheet.Cells["D1"].Value = "Matricula";
+            spreadSheet.Cells["E1"].Value = "Rancho";
+            spreadSheet.Cells["F1"].Value = "NoPipa";
+            spreadSheet.Cells["A1:F1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM proveedores", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetInt32(0);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(1);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(3);
+                spreadSheet.Cells["E" + currentRow].Value = reader.GetString(4);
+                spreadSheet.Cells["F" + currentRow].Value = reader.GetString(5);
+
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
         }
     }
 }

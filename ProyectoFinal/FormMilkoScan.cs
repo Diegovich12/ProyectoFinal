@@ -117,7 +117,37 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgMilkoScan.DataSource = ModelMilkoScan.Buscar(txtID.Text);
+            var encontro = true;
+            if (encontro)
+            {
+                dtgMilkoScan.Rows.Clear();
+                dtgMilkoScan.Refresh();
+            }
+            foreach (var item in ModelMilkoScan.Buscar(txtID.Text))
+            {
+                var row = (DataGridViewRow)dtgMilkoScan.Rows[0].Clone();
+                row.Cells[0].Value = item.Id;
+                row.Cells[1].Value = item.Identificacion;
+                row.Cells[2].Value = item.Rep;
+                row.Cells[3].Value = item.Grasa;
+                row.Cells[17].Value = item.Proteina;
+                row.Cells[4].Value = item.Sng;
+                row.Cells[5].Value = item.St;
+                row.Cells[6].Value = item.Lactosa;
+                row.Cells[7].Value = item.Caseina;
+                row.Cells[8].Value = item.Urea;
+                row.Cells[9].Value = item.Densidad;
+                row.Cells[10].Value = item.Ph;
+                row.Cells[11].Value = item.Acidez;
+                row.Cells[12].Value = item.Crioscopia;
+                row.Cells[13].Value = item.Ffa;
+                row.Cells[14].Value = item.Fecha;
+                row.Cells[15].Value = item.ProtCaseina;
+                row.Cells[16].Value = item.ProtSuero;
+                dtgMilkoScan.Rows.Add(row);
+                encontro = false;
+            }
+
         }
 
         private void toolStripBtnModificar_Click(object sender, EventArgs e)

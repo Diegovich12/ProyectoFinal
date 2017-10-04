@@ -87,7 +87,24 @@ namespace ProyectoNutrical
 
         private void toolStripBtnBuscar_Click(object sender, EventArgs e)
         {
-            dtgProveedores.DataSource = ModelProveedores.Buscar(txtNombre.Text);
+            var encontro = true;
+            foreach (var item in ModelProveedores.Buscar(txtNombre.Text))
+            {
+                if (encontro)
+                {
+                    dtgProveedores.Rows.Clear();
+                    dtgProveedores.Refresh();
+                }
+                var row = (DataGridViewRow)dtgProveedores.Rows[0].Clone();
+                row.Cells[0].Value = item.IdProveedor;
+                row.Cells[1].Value = item.Nombre;
+                row.Cells[2].Value = item.Proveedor;
+                row.Cells[3].Value = item.Matricula;
+                row.Cells[4].Value = item.Rancho;
+                row.Cells[5].Value = item.NoPipa;
+                dtgProveedores.Rows.Add(row);
+                encontro = false;
+            }
         }
 
         private void dtgProveedores_DoubleClick(object sender, EventArgs e)

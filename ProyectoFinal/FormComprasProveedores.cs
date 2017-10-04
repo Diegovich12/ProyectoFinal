@@ -258,5 +258,13 @@ namespace ProyectoNutrical
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ModelComprasP.DisplayInExcell();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
+        }
     }
 }

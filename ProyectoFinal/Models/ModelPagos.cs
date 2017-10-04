@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace ProyectoNutrical.Models
 {
@@ -227,6 +230,84 @@ namespace ProyectoNutrical.Models
             public static string Proteina { get; set; }
             public static string KilosSap { get; set; }
             public static string LitrosSap { get; set; }
+        }
+
+
+        public static void DisplayInExcell()
+        {
+            var datename = "Pagos" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + ".xlsx";
+            var path = @"C:\\ExcelCompra\\";
+
+            if (!Directory.Exists(path)) //comprueba que exista la carpeta si no la crea
+                Directory.CreateDirectory(path);
+
+            path += datename; //se agrega el nombre del archivo para comprobar si existe y para crear el arhivo.
+
+            if (File.Exists(path)) //comprueba si existe el archivo si exste lo elimina.
+                File.Delete(path);
+
+            var spreadsheetinfo = new FileInfo(path);
+            var pck = new ExcelPackage(spreadsheetinfo);
+            var spreadSheet = pck.Workbook.Worksheets.Add("pagos");
+
+            spreadSheet.Cells["A1"].Value = "IDPago";
+            spreadSheet.Cells["B1"].Value = "Kilos";
+            spreadSheet.Cells["C1"].Value = "Litros";
+            spreadSheet.Cells["D1"].Value = "Temperatura";
+            spreadSheet.Cells["E1"].Value = "Acidez";
+            spreadSheet.Cells["F1"].Value = "pH";
+            spreadSheet.Cells["G1"].Value = "Crioscopia";
+            spreadSheet.Cells["H1"].Value = "Grasa";
+            spreadSheet.Cells["I1"].Value = "Densidad";
+            spreadSheet.Cells["J1"].Value = "SNG";
+            spreadSheet.Cells["K1"].Value = "ST";
+            spreadSheet.Cells["L1"].Value = "Alcohol";
+            spreadSheet.Cells["M1"].Value = "Neutralizantes";
+            spreadSheet.Cells["N1"].Value = "Ebullicion";
+            spreadSheet.Cells["O1"].Value = "Inhibidores";
+            spreadSheet.Cells["P1"].Value = "Sabor";
+            spreadSheet.Cells["Q1"].Value = "Termofilicos";
+            spreadSheet.Cells["R1"].Value = "Micro";
+            spreadSheet.Cells["S1"].Value = "Disposicion";
+            spreadSheet.Cells["T1"].Value = "STArena";
+            spreadSheet.Cells["U1"].Value = "Proteina";
+            spreadSheet.Cells["V1"].Value = "KilosSAP";
+            spreadSheet.Cells["W1"].Value = "LitrosSAP";
+            spreadSheet.Cells["A1:W1"].Style.Font.Bold = true;
+
+            var connec = ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand("SELECT * FROM pagos", connec);
+            var reader = comando.ExecuteReader();
+            var currentRow = 2;
+            while (reader.Read())
+            {
+                spreadSheet.Cells["A" + currentRow].Value = reader.GetInt32(0);
+                spreadSheet.Cells["B" + currentRow].Value = reader.GetString(1);
+                spreadSheet.Cells["C" + currentRow].Value = reader.GetString(2);
+                spreadSheet.Cells["D" + currentRow].Value = reader.GetString(3);
+                spreadSheet.Cells["E" + currentRow].Value = reader.GetString(4);
+                spreadSheet.Cells["F" + currentRow].Value = reader.GetString(5);
+                spreadSheet.Cells["G" + currentRow].Value = reader.GetString(6);
+                spreadSheet.Cells["H" + currentRow].Value = reader.GetString(7);
+                spreadSheet.Cells["I" + currentRow].Value = reader.GetString(8);
+                spreadSheet.Cells["J" + currentRow].Value = reader.GetString(9);
+                spreadSheet.Cells["K" + currentRow].Value = reader.GetString(10);
+                spreadSheet.Cells["L" + currentRow].Value = reader.GetString(11);
+                spreadSheet.Cells["M" + currentRow].Value = reader.GetString(12);
+                spreadSheet.Cells["N" + currentRow].Value = reader.GetString(13);
+                spreadSheet.Cells["O" + currentRow].Value = reader.GetString(14);
+                spreadSheet.Cells["P" + currentRow].Value = reader.GetString(15);
+                spreadSheet.Cells["Q" + currentRow].Value = reader.GetString(16);
+                spreadSheet.Cells["R" + currentRow].Value = reader.GetString(17);
+                spreadSheet.Cells["S" + currentRow].Value = reader.GetString(18);
+                spreadSheet.Cells["T" + currentRow].Value = reader.GetString(19);
+                spreadSheet.Cells["U" + currentRow].Value = reader.GetString(20);
+                spreadSheet.Cells["V" + currentRow].Value = reader.GetString(21);
+                spreadSheet.Cells["W" + currentRow].Value = reader.GetString(22);
+                currentRow++;
+            }
+
+            pck.SaveAs(spreadsheetinfo);
         }
     }
 }

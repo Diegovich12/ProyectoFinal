@@ -240,8 +240,16 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             else
-                MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,
-MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ModelPagos.DisplayInExcell();
+            {
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+            }
         }
     }
 }

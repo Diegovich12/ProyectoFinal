@@ -637,6 +637,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(60, 67);
             this.toolStripButton1.Text = "Exportar";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // txtRemision
             // 
