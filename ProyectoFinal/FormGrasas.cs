@@ -44,10 +44,8 @@ namespace ProyectoNutrical
         }
         private void LlenarCombopuestos()
         {
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1))
-                cmbOperador.Items.Add(item.Nombre);
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2))
-                cmbAnalista.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1)) cmbOperador.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2)) cmbAnalista.Items.Add(item.Nombre);
         }
         private void toolStripBtnGuardar_Click(object sender, EventArgs e)
         {
@@ -79,8 +77,10 @@ namespace ProyectoNutrical
             var resultado = ModelGrasas.Agregar(pGrasas);
 
             if (resultado > 0)
-                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                LimpiarGrid();
+                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }   
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Registro", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -117,6 +117,7 @@ namespace ProyectoNutrical
 
             if (ModelGrasas.Actualizar(pGR) > 0)
             {
+                LimpiarGrid();
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -130,8 +131,8 @@ namespace ProyectoNutrical
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelGrasas.Eliminar(ModelGrasas.GrasasSelect.IdLinea) > 0)
             {
-                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                LimpiarGrid();
+                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -205,8 +206,7 @@ namespace ProyectoNutrical
         {
             ModelGrasas.DisplayInExcel();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -214,8 +214,7 @@ namespace ProyectoNutrical
         {
             ModelGrasas.DisplayInExcelMuestras();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -223,8 +222,7 @@ namespace ProyectoNutrical
         {
             ModelGrasas.DisplayInExcelTitulaciones();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -233,10 +231,8 @@ namespace ProyectoNutrical
             if (dtgGrasas.SelectedRows.Count == 1)
             {
                 if (dtgGrasas.CurrentRow != null)
-                {
-                    var idLinea = Convert.ToInt32(dtgGrasas.CurrentRow.Cells[0].Value);
-                    ModelGrasas.ObtenerGR(idLinea);
-                }
+                    ModelGrasas.ObtenerGR(Convert.ToInt32(dtgGrasas.CurrentRow.Cells[0].Value));
+
                 cmbCircuito.SelectedItem = ModelGrasas.GrasasSelect.Circuito;
                 dtpGrasas.Text = ModelGrasas.GrasasSelect.Fecha;
                 txtMInicial.Text = ModelGrasas.GrasasSelect.MEnjuague;
@@ -263,6 +259,13 @@ namespace ProyectoNutrical
             {
                 MessageBox.Show(@"debe de seleccionar una fila");
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgGrasas.Rows.Clear();
+            dtgGrasas.Refresh();
+            LlenarGridView();
         }
     }
 }

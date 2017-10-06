@@ -90,12 +90,12 @@ namespace ProyectoNutrical
                 Operador = cmbOperador.SelectedItem.ToString(),
                 Analista = cmbAnalista.SelectedItem.ToString()
             };
-            var resultado = ModelRecepcion.Agregar(pRecepcion);
-                dtgRecepcion.Refresh();
 
-            if (resultado > 0)
-                MessageBox.Show(@"Captura Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            if (ModelRecepcion.Agregar(pRecepcion) > 0)
+            {
+                MessageBox.Show(@"Captura Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -129,8 +129,10 @@ namespace ProyectoNutrical
             };
             dtgRecepcion.Refresh();
             if (ModelRecepcion.Actualizar(rTodo) > 0)
-                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -143,8 +145,8 @@ namespace ProyectoNutrical
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelRecepcion.Eliminar(ModelRecepcion.RecepcionSelect.IdLinea) > 0)
             {
-                MessageBox.Show(@"Captura Eliminada Correctamente!", @"Captura Eliminada", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                LimpiarGrid();
+                MessageBox.Show(@"Captura Eliminada Correctamente!", @"Captura Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -195,8 +197,7 @@ namespace ProyectoNutrical
         {
             ModelRecepcion.DisplayInExcel();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -262,8 +263,7 @@ namespace ProyectoNutrical
         {
             ModelRecepcion.DisplayInExcelMuestras();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -271,9 +271,15 @@ namespace ProyectoNutrical
         {
             ModelRecepcion.DisplayInExcelTitulaciones();
             {
-                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgRecepcion.Rows.Clear();
+            dtgRecepcion.Refresh();
+            LlenarGridView();
         }
     }
 }

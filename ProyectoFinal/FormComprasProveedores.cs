@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ProyectoNutrical.Models;
+using System;
 using System.Windows.Forms;
-using ProyectoNutrical.Models;
 
 namespace ProyectoNutrical
 {
@@ -114,8 +114,10 @@ namespace ProyectoNutrical
             var resultado = ModelComprasP.Agregar(pComprasP);
 
             if (resultado > 0)
-                MessageBox.Show(@"Compra Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Compra Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar La Compra", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -149,11 +151,11 @@ namespace ProyectoNutrical
                 Kilos = Convert.ToDouble(txtKilos.Text),
                 Litros = Convert.ToDouble(txtLitros.Text)
             };
-
-            dtgCompras.Refresh();
             if (ModelComprasP.Actualizar(pComprasP) > 0)
-                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -163,14 +165,14 @@ namespace ProyectoNutrical
         {
             if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Pago", @"Estas Seguro??",
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            if (ModelComprasP.Eliminar(ModelComprasP.ComprasPSelect.IdCompra,
-                    ModelComprasP.ComprasPSelect.IdCompra) > 0)
+            if (ModelComprasP.Eliminar(ModelComprasP.ComprasPSelect.IdCompra, ModelComprasP.ComprasPSelect.IdCompra) > 0)
             {
                 MessageBox.Show(@"Pago Eliminado Correctamente!", @"Pago Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 MessageBox.Show(@"No Se Pudo Eliminar El Pago", @"Pago No Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 Limpiarcp();
+                LimpiarGrid();
             }
             else
             {
@@ -265,6 +267,13 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
                       MessageBoxIcon.Information);
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgCompras.Rows.Clear();
+            dtgCompras.Refresh();
+            LlenarGridView();
         }
     }
 }

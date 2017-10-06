@@ -342,6 +342,7 @@
             this.dtgMilkoScan.Name = "dtgMilkoScan";
             this.dtgMilkoScan.Size = new System.Drawing.Size(1010, 244);
             this.dtgMilkoScan.TabIndex = 48;
+            this.dtgMilkoScan.DoubleClick += new System.EventHandler(this.dtgMilkoScan_DoubleClick);
             // 
             // Column1
             // 

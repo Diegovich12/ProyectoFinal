@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using ProyectoNutrical.Models;
+﻿using ProyectoNutrical.Models;
+using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ProyectoNutrical
 {
@@ -61,10 +61,8 @@ namespace ProyectoNutrical
         private void LlenarCombopuestos()
         {
 
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1))
-                cmbOperador.Items.Add(item.Nombre);
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2))
-                cmbAnalista.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1)) cmbOperador.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2)) cmbAnalista.Items.Add(item.Nombre);
         }
         private void toolStripBtnGuardar_Click(object sender, EventArgs e)
         {
@@ -97,8 +95,10 @@ namespace ProyectoNutrical
             var resultado = ModelEvaporador.Agregar(pEvaporador);
 
             if (resultado > 0)
-                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                LimpiarGrid();
+                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Registro", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -110,8 +110,8 @@ namespace ProyectoNutrical
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelEvaporador.Eliminar(ModelEvaporador.EvaporadorSelect.IdLinea) > 0)
             {
-                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                LimpiarGrid();
+                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -189,6 +189,7 @@ namespace ProyectoNutrical
 
             if (ModelEvaporador.Actualizar(pEvaporador) > 0)
             {
+                LimpiarGrid();
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -224,10 +225,7 @@ namespace ProyectoNutrical
             if (dtgEvaporador.SelectedRows.Count == 1)
             {
                 if (dtgEvaporador.CurrentRow != null)
-                {
-                    var idLinea = Convert.ToInt32(dtgEvaporador.CurrentRow.Cells[0].Value);
-                    ModelEvaporador.ObtenerEvaporador(idLinea);
-                }
+                    ModelEvaporador.ObtenerEvaporador(Convert.ToInt32(dtgEvaporador.CurrentRow.Cells[0].Value));
                 cmbCircuito.SelectedItem = ModelEvaporador.EvaporadorSelect.Circuito;
                 dtpEvaporador.Text = ModelEvaporador.EvaporadorSelect.Fecha;
                 txtMInicial.Text = ModelEvaporador.EvaporadorSelect.MEnjuague;
@@ -281,6 +279,13 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
                       MessageBoxIcon.Information);
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgEvaporador.Rows.Clear();
+            dtgEvaporador.Refresh();
+            LlenarGridView();
         }
     }
  }

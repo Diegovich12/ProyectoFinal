@@ -48,11 +48,8 @@ namespace ProyectoNutrical
 
         private void LlenarCombopuestos()
         {
-
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1))
-                cmbOperador.Items.Add(item.Nombre);
-            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2))
-                cmbAnalista.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(1)) cmbOperador.Items.Add(item.Nombre);
+            foreach (var item in ModelTrabajadores.LlenarcomboTrabajadores(2)) cmbAnalista.Items.Add(item.Nombre);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -108,8 +105,10 @@ namespace ProyectoNutrical
             var resultado = ModelCuartoHumedo.Agregar(pCH);
 
             if (resultado > 0)
-                MessageBox.Show(@"Captura Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Captura Guardada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -148,7 +147,7 @@ namespace ProyectoNutrical
             if (ModelCuartoHumedo.Actualizar(pCH) > 0)
             {
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                LimpiarGrid();
             }
             else
                 MessageBox.Show("No Se Pudo Actualizar", "Error al Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -160,8 +159,8 @@ namespace ProyectoNutrical
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelCuartoHumedo.Eliminar(ModelCuartoHumedo.CuartoHumedoSelect.IdLinea) > 0)
             {
-                MessageBox.Show(@"Captura Eliminada Correctamente!", @"Captura Eliminada", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"Captura Eliminada Correctamente!", @"Captura Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                LimpiarGrid();
             }
             else
             {
@@ -213,10 +212,8 @@ namespace ProyectoNutrical
             if (dtgCuartoHumedo.SelectedRows.Count == 1)
             {
                 if (dtgCuartoHumedo.CurrentRow != null)
-                {
-                    var idLinea = Convert.ToInt32(dtgCuartoHumedo.CurrentRow.Cells[0].Value);
-                    ModelCuartoHumedo.ObtenerCH(idLinea);
-                }
+                    ModelCuartoHumedo.ObtenerCH(Convert.ToInt32(dtgCuartoHumedo.CurrentRow.Cells[0].Value));
+
                 cmbCircuito.SelectedItem = ModelCuartoHumedo.CuartoHumedoSelect.Circuito;
                 dtpCuartoHumedo.Text = ModelCuartoHumedo.CuartoHumedoSelect.Fecha;
                 txtMInicial.Text = ModelCuartoHumedo.CuartoHumedoSelect.MEnjuague;
@@ -270,6 +267,13 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
                       MessageBoxIcon.Information);
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgCuartoHumedo.Rows.Clear();
+            dtgCuartoHumedo.Refresh();
+            LlenarGridView();
         }
     }
 }

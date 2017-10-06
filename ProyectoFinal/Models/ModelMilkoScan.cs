@@ -8,9 +8,7 @@ namespace ProyectoNutrical.Models
 {
     public class ModelMilkoScan
     {
-        public ModelMilkoScan()
-        {
-        }
+        public ModelMilkoScan() { }
 
         public ModelMilkoScan(int pId, string pIdentificacion, int pRep, double pGrasa, double pProteina, double pSng,
             double pSt, double pLactosa,
@@ -91,10 +89,6 @@ namespace ProyectoNutrical.Models
             return lista;
         }
 
-
-        /// <summary>
-        ///     metodo para agregar
-        /// </summary>
         public static int Agregar(ModelMilkoScan pMs)
         {
             var connec = ConexionMySql.ObtenerConexion();
@@ -125,9 +119,7 @@ namespace ProyectoNutrical.Models
             MySqlCommand comando;
             {
                 //actualizar los datos del milko
-                comando = new MySqlCommand(
-                    $"CALL ActualizarMilko('{pAcMilko}','{pModelMilko.Identificacion}','{pModelMilko.Rep}','{pModelMilko.Grasa}','{pModelMilko.Proteina}','{pModelMilko.Sng}','{pModelMilko.St}'','{pModelMilko.Lactosa}','{pModelMilko.Caseina}','{pModelMilko.Urea}','{pModelMilko.Densidad}','{pModelMilko.Ph}','{pModelMilko.Acidez}','{pModelMilko.Crioscopia}','{pModelMilko.Ffa}','{pModelMilko.Fecha}','{pModelMilko.ProtCaseina}','{pModelMilko.ProtSuero}','a','a')",
-                    conexion);
+                comando = new MySqlCommand($"UPDATE milkoscan SET Identificacion = '{pModelMilko.Identificacion}', REP = '{pModelMilko.Rep}', Grasa = '{pModelMilko.Grasa}', SNG ='{pModelMilko.Sng}', ST = '{pModelMilko.St}', Lactosa = '{pModelMilko.Lactosa}', Caseina = '{pModelMilko.Caseina}', Urea = '{pModelMilko.Urea}', Densidad = '{pModelMilko.Densidad}', pH = '{pModelMilko.Ph}', Acidez = '{pModelMilko.Acidez}', Crioscopia = '{pModelMilko.Crioscopia}', FFA = '{pModelMilko.Ffa}', Fecha = '{pModelMilko.Fecha}', ProteinaC = '{pModelMilko.ProtCaseina}', ProteinaS = '{pModelMilko.ProtSuero}', Proteina = '{pModelMilko.Proteina}' WHERE ID = '{pModelMilko.Id}'", conexion);
                 retorno = comando.ExecuteNonQuery();
             }
             return retorno;
@@ -138,18 +130,31 @@ namespace ProyectoNutrical.Models
         {
             var lista = new List<ModelMilkoScan>();
 
-            //aca tendrias que cambiar la query para que te busque por cualquiera de los 4 parametros
-
-            var comando = new MySqlCommand($"SELECT * FROM milkoscan WHERE Identificacion='{pIdentificacion}'");
-            ConexionMySql.ObtenerConexion();
+            var comando = new MySqlCommand($"SELECT * FROM milkoscan WHERE Identificacion='{pIdentificacion}'", ConexionMySql.ObtenerConexion());
             var reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 var pModelMilko = new ModelMilkoScan
                 {
-                    Identificacion = reader.GetString(0),
+                    Id = reader.GetInt32(0),
+                    Identificacion = reader.GetString(1),
+                    Rep = reader.GetInt32(2),
+                    Grasa = reader.GetDouble(3),
+                    Proteina = reader.GetDouble(17),
+                    Sng = reader.GetDouble(4),
+                    St = reader.GetDouble(5),
+                    Lactosa = reader.GetDouble(6),
+                    Caseina = reader.GetDouble(7),
+                    Urea = reader.GetDouble(8),
+                    Densidad = reader.GetDouble(9),
+                    Ph = reader.GetDouble(10),
+                    Acidez = reader.GetDouble(11),
+                    Crioscopia = reader.GetDouble(12),
+                    Ffa = reader.GetDouble(13),
+                    Fecha = reader.GetString(14),
+                    ProtCaseina = reader.GetDouble(15),
+                    ProtSuero = reader.GetDouble(16)
                 };
-
                 lista.Add(pModelMilko);
             }
             return lista;

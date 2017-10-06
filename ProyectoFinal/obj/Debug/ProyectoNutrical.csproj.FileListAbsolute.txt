@@ -368,3 +368,27 @@ C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\Pr
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.exe
 C:\Users\DeevBee\Documents\Visual Studio 2017\proyect\ProyectoFinal\obj\Debug\ProyectoNutrical.pdb
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\bin\Debug\ProyectoNutrical.exe
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\bin\Debug\ProyectoNutrical.pdb
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\bin\Debug\EPPlus.dll
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\bin\Debug\MySql.Data.dll
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.csprojResolveAssemblyReference.cache
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormCuartoHumedo.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormOperador.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormRegistroProveedores.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormEvaporador.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormGrasas.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormLogIn.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormAnalista.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormMilkoScan.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormPagos.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.Properties.Resources.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormComprasProveedores.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormRecepcion.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormSecadorHorizontal.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormSecadorVertical.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.FormTrabajadores.resources
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.csproj.GenerateResource.Cache
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.csproj.CoreCompileInputs.cache
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.exe
+C:\Users\DeevBee\source\repos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoNutrical.pdb

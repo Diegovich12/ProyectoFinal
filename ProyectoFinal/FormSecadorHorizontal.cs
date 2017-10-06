@@ -77,11 +77,12 @@ namespace ProyectoNutrical
                 Operador = cmbOperador.SelectedItem.ToString(),
                 Analista = cmbAnalista.SelectedItem.ToString()
             };
-            var resultado = ModelSecadorHorizontal.Agregar(pSH);
 
-            if (resultado > 0)
-                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            if (ModelSecadorHorizontal.Agregar(pSH) > 0)
+            {
+                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Registro", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -120,6 +121,7 @@ namespace ProyectoNutrical
             if (ModelSecadorHorizontal.Actualizar(pSH) > 0)
             {
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
             }
             else
                 MessageBox.Show("No Se Pudo Actualizar", "Error al Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -132,8 +134,8 @@ namespace ProyectoNutrical
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelSecadorHorizontal.Eliminar(ModelSecadorHorizontal.SHorizontalSelect.IdLinea) > 0)
             {
-                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                LimpiarGrid();
             }
             else
             {
@@ -234,10 +236,7 @@ namespace ProyectoNutrical
             if (dtgHorizontal.SelectedRows.Count == 1)
             {
                 if (dtgHorizontal.CurrentRow != null)
-                {
-                    var idLinea = Convert.ToInt32(dtgHorizontal.CurrentRow.Cells[0].Value);
-                    ModelSecadorHorizontal.ObtenerSH(idLinea);
-                }
+                    ModelSecadorHorizontal.ObtenerSH(Convert.ToInt32(dtgHorizontal.CurrentRow.Cells[0].Value));
                 cmbCircuito.SelectedItem = ModelSecadorHorizontal.SHorizontalSelect.Circuito;
                 dtpHorizontal.Text = ModelSecadorHorizontal.SHorizontalSelect.Fecha;
                 txtMInicial.Text = ModelSecadorHorizontal.SHorizontalSelect.MEnjuague;
@@ -264,6 +263,13 @@ namespace ProyectoNutrical
             {
                 MessageBox.Show(@"debe de seleccionar una fila");
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgHorizontal.Rows.Clear();
+            dtgHorizontal.Refresh();
+            LlenarGridView();
         }
     }
 }

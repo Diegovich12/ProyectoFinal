@@ -36,11 +36,12 @@ namespace ProyectoNutrical
                 NoPipa = txtNoPipa.Text.Trim(),
                 Proveedor = txtProveedor.Text.Trim()
             };
-            var resultado = ModelProveedores.Agregar(insert);
 
-            if (resultado > 0)
-                MessageBox.Show(@"Proveedor Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            if (ModelProveedores.Agregar(insert) > 0)
+            {
+                MessageBox.Show(@"Proveedor Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Proveedor", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -59,13 +60,15 @@ namespace ProyectoNutrical
                 NoPipa = txtNoPipa.Text.Trim(),
             };
 
-           if (ModelProveedores.Actualizar(pTodo) > 0)
-                MessageBox.Show(@"Cliente Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            if (ModelProveedores.Actualizar(pTodo) > 0)
+            {
+                MessageBox.Show(@"Cliente Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No se pudo guardar el cliente", @"Fallo!!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);   
-            }
+                    MessageBoxIcon.Exclamation);
+        }
 
         private void toolStripBtnEliminar_Click(object sender, EventArgs e)
         {
@@ -73,10 +76,8 @@ namespace ProyectoNutrical
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelProveedores.Eliminar(ModelProveedores.ProveedorSelec.IdProveedor) > 0)
             {
-                MessageBox.Show(@"Proveedor Eliminado Correctamente!", @"Proveedor Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                MessageBox.Show(@"No Se Pudo Eliminar El Proveedor", @"Proveedor No Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"Proveedor Eliminado Correctamente!", @"Proveedor Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                LimpiarGrid();
             }
             else
             {
@@ -112,10 +113,8 @@ namespace ProyectoNutrical
             if (dtgProveedores.SelectedRows.Count == 1)
             {
                 if (dtgProveedores.CurrentRow != null)
-                {
-                    var id = Convert.ToInt32(dtgProveedores.CurrentRow.Cells[0].Value);
-                    ModelProveedores.ObtenerProveedor(id);
-                }
+                    ModelProveedores.ObtenerProveedor(Convert.ToInt32(dtgProveedores.CurrentRow.Cells[0].Value));
+
                 txtNombre.Text = ModelProveedores.ProveedorSelec.Nombre;
                 txtProveedor.Text = ModelProveedores.ProveedorSelec.Proveedor;
                 txtMatricula.Text = ModelProveedores.ProveedorSelec.Matricula;
@@ -128,5 +127,13 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"debe de seleccionar una fila");
             }
         }
+
+        public void LimpiarGrid()
+        {
+            dtgProveedores.Rows.Clear();
+            dtgProveedores.Refresh();
+            LlenarGridView();
+        }
+
     }
 }

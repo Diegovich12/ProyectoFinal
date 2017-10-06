@@ -82,8 +82,10 @@ namespace ProyectoNutrical
             var resultado = ModelSecadorVertical.Agregar(pSV);
 
             if (resultado > 0)
-                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Registro Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Registro", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -122,6 +124,7 @@ namespace ProyectoNutrical
             if (ModelSecadorVertical.Actualizar(pSV) > 0)
             {
                 MessageBox.Show("Los Datos Se Actualizaron", "Datos Actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
             }
             else
                 MessageBox.Show("No Se Pudo Actualizar", "Error al Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -135,6 +138,7 @@ namespace ProyectoNutrical
             {
                 MessageBox.Show(@"Registro Eliminado Correctamente!", @"Registro Eliminado", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
+                LimpiarGrid();
             }
             else
             {
@@ -235,10 +239,8 @@ namespace ProyectoNutrical
             if (dtgVertical.SelectedRows.Count == 1)
             {
                 if (dtgVertical.CurrentRow != null)
-                {
-                    var idLinea = Convert.ToInt32(dtgVertical.CurrentRow.Cells[0].Value);
-                    ModelSecadorVertical.ObtenerSV(idLinea);
-                }
+                    ModelSecadorVertical.ObtenerSV(Convert.ToInt32(dtgVertical.CurrentRow.Cells[0].Value));
+
                 cmbCircuito.SelectedItem = ModelSecadorVertical.SVerticalSelect.Circuito;
                 dtpSecadorVertical.Text = ModelSecadorVertical.SVerticalSelect.Fecha;
                 txtMInicial.Text = ModelSecadorVertical.SVerticalSelect.MEnjuague;
@@ -265,6 +267,13 @@ namespace ProyectoNutrical
             {
                 MessageBox.Show(@"debe de seleccionar una fila");
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgVertical.Rows.Clear();
+            dtgVertical.Refresh();
+            LlenarGridView();
         }
     }
 }

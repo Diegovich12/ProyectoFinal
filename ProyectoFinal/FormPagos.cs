@@ -32,7 +32,6 @@ namespace ProyectoNutrical
             txtOlor.Clear();
             txtTermofilicos.Clear();
             txtMicro.Clear();
-            //txtDisposicion.Clear();
             txtSTArena.Clear();
             txtProteina.Clear();
             txtKilosSAP.Clear();
@@ -100,14 +99,10 @@ namespace ProyectoNutrical
                 LitrosSap = txtLitrosSAP.Text.Trim()
             };
 
-            var resultado = ModelPagos.Agregar(pPagos);
-
-            if (resultado > 0)
+            if (ModelPagos.Agregar(pPagos) > 0)
             {
                 MessageBox.Show(@"Pago Guardado Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dtgPagos.Rows.Clear();
-                dtgPagos.Refresh();
-                LlenarGridView();
+                LimpiarGrid();
             }
             else
                 MessageBox.Show(@"No Se Pudo Guardar El Pago", @"Fallo!!", MessageBoxButtons.OK,
@@ -116,15 +111,12 @@ namespace ProyectoNutrical
 
         private void toolStripBtnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Pago", @"Estas Seguro??",
-                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+            if (MessageBox.Show(@"Esta Seguro Que Desea Eliminar El Pago", @"Estas Seguro??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             if (ModelPagos.Eliminar(ModelPagos.PagoSelec.IdPagos) > 0)
             {
-                MessageBox.Show(@"Pago Eliminado Correctamente!", @"Pago Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                MessageBox.Show(@"No Se Pudo Eliminar El Pago", @"Pago No Eliminado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"Pago Eliminado Correctamente!", @"Pago Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarp();
+                LimpiarGrid();
             }
             else
             {
@@ -237,8 +229,10 @@ namespace ProyectoNutrical
                 LitrosSap = txtLitrosSAP.Text.Trim()
             };
             if (ModelPagos.Actualizar(rTodo) > 0)
-                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                LimpiarGrid();
+                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
                 MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
         }
@@ -250,6 +244,13 @@ namespace ProyectoNutrical
                 MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
                       MessageBoxIcon.Information);
             }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgPagos.Rows.Clear();
+            dtgPagos.Refresh();
+            LlenarGridView();
         }
     }
 }

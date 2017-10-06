@@ -1,10 +1,6 @@
 ﻿using ProyectoNutrical.Models;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
-using System.IO;
+using System.Windows.Forms;
 
 namespace ProyectoNutrical
 {
@@ -16,7 +12,7 @@ namespace ProyectoNutrical
             LlenarGrid();
         }
 
-        public void limpiarm()
+        public void Limpiarm()
         {
             txtID.Clear();
             txtREP.Clear();
@@ -36,11 +32,12 @@ namespace ProyectoNutrical
             txtProteinaS.Clear();
 
         }
+
         public void LlenarGrid()
         {
             foreach (var item in ModelMilkoScan.Llenargrid())
             {
-                var row = (DataGridViewRow) dtgMilkoScan.Rows[0].Clone();
+                var row = (DataGridViewRow)dtgMilkoScan.Rows[0].Clone();
                 row.Cells[0].Value = item.Id;
                 row.Cells[1].Value = item.Identificacion;
                 row.Cells[2].Value = item.Rep;
@@ -89,8 +86,10 @@ namespace ProyectoNutrical
             var resultado = ModelMilkoScan.Agregar(pMilko);
 
             if (resultado > 0)
-                MessageBox.Show(@"Captura Guardada Con Exitó!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Captura Guardada Con Exitó!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Guardar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -106,7 +105,8 @@ namespace ProyectoNutrical
                     MessageBoxIcon.Exclamation);
                 MessageBox.Show(@"No Se Pudo Eliminar La Captura", @"Captura No Eliminada", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-                limpiarm();
+                Limpiarm();
+                LimpiarGrid();
             }
             else
             {
@@ -177,8 +177,10 @@ namespace ProyectoNutrical
 
             };
             if (ModelMilkoScan.Actualizar(aTodo, 1) > 0)
-                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            {
+                MessageBox.Show(@"Captura Actualizada Con Exito!!", @"Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarGrid();
+            }
             else
                 MessageBox.Show(@"No Se Pudo Actualizar La Captura", @"Fallo!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
@@ -186,16 +188,50 @@ namespace ProyectoNutrical
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            /* cada que se presiona el boton se crea un achivo nuevo si se ejecuta en el mismo minuto se reemplaza
-             * este archivo se llama Milkoscanmasfechahoraymin por eso solo se reemplaza cuando es del mismo minuto
-             * este evento tambien te crea la carpeta contenedora de los archivos. 
-            */
-            
             ModelMilkoScan.DisplayInExcel();
             {
-                  MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado en ", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                MessageBox.Show(@"Exportación Realizada Con Exitó!!", @"Guardado en ", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
             }
+        }
+
+        private void dtgMilkoScan_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtgMilkoScan.SelectedRows.Count == 1)
+            {
+                if (dtgMilkoScan.CurrentRow != null)
+                    ModelMilkoScan.ObtenerMilko(Convert.ToInt32(dtgMilkoScan.CurrentRow.Cells[0].Value));
+
+                txtID.Text = ModelMilkoScan.MilkoScanSelect.Identificacion;
+                txtREP.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Rep);
+                txtGrasa.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Grasa);
+                txtProteina.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Proteina);
+                txtSNG.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Sng);
+                txtST.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.St);
+                txtLactosa.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Lactosa);
+                txtCaseina.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Caseina);
+                txtUrea.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Urea);
+                txtDensidad.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Densidad);
+                txtpH.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Ph);
+                txtAcidez.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Acidez);
+                txtCrioscopia.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Crioscopia);
+                txtFFA.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.Ffa);
+                dtpMilko.Text =ModelMilkoScan.MilkoScanSelect.Fecha;
+                txtProteinaC.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.ProtCaseina);
+                txtProteinaS.Text = Convert.ToString(ModelMilkoScan.MilkoScanSelect.ProtSuero);
+
+            }
+            else
+            {
+                MessageBox.Show(@"debe de seleccionar una fila");
+            }
+        }
+
+        public void LimpiarGrid()
+        {
+            dtgMilkoScan.Rows.Clear();
+            dtgMilkoScan.Refresh();
+            LlenarGrid();
         }
     }
 }
